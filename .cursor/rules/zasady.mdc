@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Zasady dla tego projektu:
+- font: Poppins i jego różne grubości
+- kolory: #01DFEC, #0B2360
+- kolory tekstu: preferuj biały lub czarny
+- pracujemy w jednym pliku index.html - nie rozdzielamy JS,CSS od HTML
+- różne wersje logotypu mojej firmy są w głównym katalogu projektu
+
+- strona musi być responsywna, podejście mobile-first

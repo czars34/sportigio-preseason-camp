@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportigio PreSeason Camp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: linear-gradient(135deg, #0B2360 0%, #01DFEC 100%);
+            min-height: 100vh;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            color: white;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #01DFEC;
+            color: #0B2360;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 223, 236, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: #0B2360;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(1, 223, 236, 0.4);
+        }
+
+        /* Tablet styles */
+        @media (min-width: 768px) {
+            .hero {
+                padding: 3rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .cta-button {
+                font-size: 1.3rem;
+                padding: 1.2rem 3rem;
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 4rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+                margin-bottom: 3.5rem;
+            }
+            
+            .cta-button {
+                font-size: 1.4rem;
+                padding: 1.3rem 3.5rem;
+            }
+        }
+
+        /* Large desktop styles */
+        @media (min-width: 1440px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* About section */
+        .about-section {
+            background-color: white;
+            color: #0B2360;
+            padding: 4rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #0B2360;
+        }
+
+        .intro {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #01DFEC;
+            margin-bottom: 3rem;
+        }
+
+        .features {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #01DFEC;
+        }
+
+        .feature p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #0B2360;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Tablet styles for about section */
+        @media (min-width: 768px) {
+            .about-section {
+                padding: 5rem 2rem;
+            }
+            
+            .about-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .intro {
+                font-size: 1.4rem;
+                margin-bottom: 3.5rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .feature p {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Desktop styles for about section */
+        @media (min-width: 1024px) {
+            .about-section {
+                padding: 6rem 2rem;
+            }
+            
+            .about-section h2 {
+                font-size: 3rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .intro {
+                font-size: 1.5rem;
+                margin-bottom: 4rem;
+            }
+            
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+            }
+            
+            .feature {
+                padding: 2.5rem;
+            }
+            
+            .feature p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Wejdź w nowy sezon z głową – prosto, praktycznie, na Twoich warunkach.</h1>
+            <p>Bezpłatny cykl webinarów i zadań, dzięki którym przygotujesz stronę klubu, włączysz sklep, dodasz bilety i przyciągniesz kibiców oraz sponsorów – nawet jeśli Twoja znajomość IT kończy się na Facebooku.</p>
+            <a href="#" class="cta-button">Zapisz się bezpłatnie i zacznij działać</a>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2>Co to jest PreSeason Camp?</h2>
+            <p class="intro">Praktyczne przygotowanie klubu na nowy sezon.</p>
+            <div class="features">
+                <div class="feature">
+                    <p>Zamiast nudnej teorii – co tydzień dostajesz zadanie, instrukcję i narzędzia.</p>
+                </div>
+                <div class="feature">
+                    <p>Masz dostęp do grupy, konsultacji i webinarów.</p>
+                </div>
+                <div class="feature">
+                    <p>Robisz to w godzinę tygodniowo lub kiedy chcesz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
