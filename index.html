@@ -26,16 +26,26 @@
             align-items: center;
             justify-content: center;
             padding: 2rem 1rem;
-            text-align: center;
+            background: url('FULL_HD_gradient_lossless.webp') center center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1400px;
             width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: white;
@@ -51,10 +61,25 @@
             line-height: 1.6;
         }
 
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
         .cta-button {
             display: inline-block;
-            background-color: #01DFEC;
-            color: #0B2360;
+            background-color: white;
+            color: black;
             font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
@@ -64,14 +89,16 @@
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(1, 223, 236, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .cta-button:hover {
-            background-color: white;
-            color: #0B2360;
+            background-color: #f8f9fa;
+            color: black;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(1, 223, 236, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
         }
 
         /* Tablet styles */
@@ -80,8 +107,17 @@
                 padding: 3rem 2rem;
             }
             
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+            
+            .hero-text {
+                text-align: left;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
                 margin-bottom: 2rem;
             }
             
@@ -102,8 +138,17 @@
                 padding: 4rem 2rem;
             }
             
+            .hero-content {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 5rem;
+            }
+            
+            .hero-image img {
+                max-width: 120%;
+            }
+            
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.4rem;
                 margin-bottom: 2.5rem;
             }
             
@@ -121,7 +166,7 @@
         /* Large desktop styles */
         @media (min-width: 1440px) {
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 2.8rem;
             }
             
             .hero p {
@@ -237,9 +282,14 @@
 <body>
     <section class="hero">
         <div class="hero-content">
-            <h1>Wejdź w nowy sezon z głową – prosto, praktycznie, na Twoich warunkach.</h1>
-            <p>Bezpłatny cykl webinarów i zadań, dzięki którym przygotujesz stronę klubu, włączysz sklep, dodasz bilety i przyciągniesz kibiców oraz sponsorów – nawet jeśli Twoja znajomość IT kończy się na Facebooku.</p>
-            <a href="#" class="cta-button">Zapisz się bezpłatnie i zacznij działać</a>
+            <div class="hero-text">
+                <h1>Wejdź w nowy sezon z głową.<br> Prosto i praktycznie. <br>Na Twoich warunkach.</h1>
+                <p>Bezpłatny cykl webinarów i zadań, dzięki którym przygotujesz stronę klubu, włączysz sklep, dodasz bilety i przyciągniesz kibiców oraz sponsorów – nawet jeśli Twoja znajomość IT kończy się na Facebooku.</p>
+                <a href="#" class="cta-button">Zapisz się bezpłatnie i zacznij działać</a>
+            </div>
+            <div class="hero-image">
+                <img src="Zrzut ekranu 2025-06-14 184815.png" alt="Kairoz Platform Screenshot">
+            </div>
         </div>
     </section>
 
