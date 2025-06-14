@@ -20,12 +20,148 @@
             min-height: 100vh;
         }
 
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(11, 35, 96, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.4rem 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            height: 20px;
+            width: auto;
+        }
+
+        .navbar-nav {
+            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 1.5rem;
+        }
+
+        .navbar-nav li {
+            margin: 0;
+        }
+
+        .navbar-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #01DFEC;
+        }
+
+        .navbar-cta {
+            background-color: white;
+            color: #0B2360;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .navbar-cta:hover {
+            background-color: #01DFEC;
+            color: #0B2360;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Tablet styles for navbar */
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 0.5rem 1.2rem;
+                width: 85%;
+            }
+
+            .navbar-logo img {
+                height: 24px;
+            }
+
+            .navbar-nav {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .navbar-cta {
+                font-size: 0.9rem;
+                padding: 0.5rem 1.2rem;
+            }
+        }
+
+        /* Desktop styles for navbar */
+        @media (min-width: 1024px) {
+            .navbar {
+                padding: 0.6rem 1.5rem;
+                width: 80%;
+            }
+
+            .navbar-logo img {
+                height: 28px;
+            }
+
+            .navbar-nav {
+                gap: 2rem;
+            }
+
+            .navbar-nav a {
+                font-size: 1rem;
+            }
+
+            .navbar-cta {
+                font-size: 1rem;
+                padding: 0.6rem 1.5rem;
+            }
+        }
+
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem 1rem;
+            padding: 5rem 1rem 2rem;
             background: url('FULL_HD_gradient_lossless.webp') center center/cover no-repeat;
             position: relative;
             overflow: hidden;
@@ -82,7 +218,7 @@
             color: black;
             font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
@@ -104,7 +240,7 @@
         /* Tablet styles */
         @media (min-width: 768px) {
             .hero {
-                padding: 3rem 2rem;
+                padding: 6rem 2rem 3rem;
             }
             
             .hero-content {
@@ -135,7 +271,7 @@
         /* Desktop styles */
         @media (min-width: 1024px) {
             .hero {
-                padding: 4rem 2rem;
+                padding: 7rem 2rem 4rem;
             }
             
             .hero-content {
@@ -280,6 +416,19 @@
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="/sportigio-poziom-white.png" alt="Sportigio">
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="#terminy">Terminy</a></li>
+            <li><a href="#zyskujesz">Co zyskujesz?</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+        <a href="#" class="navbar-cta">Zapisz się</a>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
