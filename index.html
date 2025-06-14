@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sportigio PreSeason Camp</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -333,7 +334,7 @@
         .intro {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #01DFEC;
+            color: #0B2360;
             margin-bottom: 3rem;
         }
 
@@ -344,18 +345,51 @@
         }
 
         .feature {
-            background-color: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #01DFEC;
+            background: linear-gradient(135deg, #0B2360 0%, #1a3a7a 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(11, 35, 96, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #01DFEC 0%, #00c4d1 100%);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(11, 35, 96, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(1, 223, 236, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: white;
         }
 
         .feature p {
             font-size: 1.1rem;
             font-weight: 500;
-            color: #0B2360;
+            color: white;
             margin: 0;
             line-height: 1.6;
+            text-align: center;
         }
 
         /* Tablet styles for about section */
@@ -377,6 +411,17 @@
             .features {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+            }
+            
+            .feature {
+                padding: 3rem 2.5rem;
+            }
+            
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+                color: white;
             }
             
             .feature p {
@@ -406,11 +451,137 @@
             }
             
             .feature {
-                padding: 2.5rem;
+                padding: 3.5rem 3rem;
+            }
+            
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+                color: white;
             }
             
             .feature p {
                 font-size: 1.1rem;
+            }
+        }
+
+        .webinar-section {
+            background: #fff;
+            color: #111;
+            padding: 4rem 1rem 3rem;
+        }
+        .webinar-section .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .webinar-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #0B2360;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        .webinar-date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .webinar-icon {
+            color: #0B2360;
+            font-size: 1.3rem;
+        }
+        .webinar-topics h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0B2360;
+            margin-bottom: 1rem;
+            display: block;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .webinar-topics ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 2rem auto;
+            max-width: 400px;
+            text-align: left;
+        }
+        .webinar-topics ul li {
+            font-size: 1.05rem;
+            margin-bottom: 0.7rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .webinar-topics ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #0B2360;
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            font-size: 1rem;
+        }
+        .webinar-cta-row {
+            margin-top: 2.5rem;
+        }
+        .webinar-cta {
+            display: inline-block;
+            background: #0B2360;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(11, 35, 96, 0.08);
+        }
+        .webinar-cta i {
+            margin-right: 0.7rem;
+        }
+        .webinar-cta:hover {
+            background: #01DFEC;
+            color: #0B2360;
+            transform: translateY(-2px);
+        }
+        @media (min-width: 768px) {
+            .webinar-section {
+                padding: 5rem 2rem 4rem;
+            }
+            .webinar-section h2 {
+                font-size: 2.3rem;
+            }
+            .webinar-topics ul {
+                font-size: 1.1rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .webinar-section {
+                padding: 6rem 2rem 5rem;
+            }
+            .webinar-section h2 {
+                font-size: 2.7rem;
+            }
+            .webinar-cta {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.8rem;
+            }
+            .webinar-topics ul {
+                max-width: 525px;
             }
         }
     </style>
@@ -444,18 +615,50 @@
 
     <section class="about-section">
         <div class="container">
-            <h2>Co to jest PreSeason Camp?</h2>
+            <h2>Czym jest PreSeason Camp?</h2>
             <p class="intro">Praktyczne przygotowanie klubu na nowy sezon.</p>
             <div class="features">
                 <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
                     <p>Zamiast nudnej teorii – co tydzień dostajesz zadanie, instrukcję i narzędzia.</p>
                 </div>
                 <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <p>Masz dostęp do grupy, konsultacji i webinarów.</p>
                 </div>
                 <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
                     <p>Robisz to w godzinę tygodniowo lub kiedy chcesz.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="webinar-section">
+        <div class="container">
+            <h2><i class="fas fa-play-circle"></i> Start: Webinar otwierający – 23 czerwca</h2>
+            <div class="webinar-date">
+                <span class="webinar-icon"><i class="fas fa-calendar-alt"></i></span>
+                <span class="webinar-date-text">Termin: 23 czerwca, godz. XX:XX (lub: dostępne nagranie)</span>
+            </div>
+            <div class="webinar-topics">
+                <h3>Tematy:</h3>
+                <ul>
+                    <li>Nowości w Sportigio 2025</li>
+                    <li>Jak działa darmowy plan</li>
+                    <li>Jak zacząć od strony, aplikacji i prostych narzędzi</li>
+                    <li>Pokaz kreatora strony w 5 minut</li>
+                    <li>Przykłady klubów i Q&amp;A</li>
+                </ul>
+            </div>
+            <div class="webinar-cta-row">
+                <a href="#" class="webinar-cta"><i class="fas fa-file-pdf"></i> Zapisz się i odbierz przewodnik PDF + dostęp do panelu</a>
             </div>
         </div>
     </section>
