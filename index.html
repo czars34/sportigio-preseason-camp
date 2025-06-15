@@ -957,6 +957,178 @@
                 max-width: none;
             }
         }
+
+        /* FAQ Section */
+        .faq-section {
+            background: #fff;
+            color: #0B2360;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0B2360;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .faq-question span {
+            padding-right: 1rem;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-answer p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        @media (min-width: 768px) {
+            .faq-section {
+                padding: 5rem 2rem;
+            }
+            .faq-section h2 {
+                font-size: 2.5rem;
+            }
+            .faq-question {
+                font-size: 1.2rem;
+            }
+            .faq-answer p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .faq-section {
+                padding: 6rem 2rem;
+            }
+            .faq-section h2 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background: linear-gradient(135deg, #0B2360 0%, #01DFEC 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .final-cta-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .final-cta-section .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #0B2360;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .final-cta-section .cta-button:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .cta-note {
+            font-size: 0.75rem !important; 
+            opacity: 0.8;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            color: white;
+        }
+        
+        @media (min-width: 768px) {
+            .final-cta-section {
+                padding: 5rem 2rem;
+            }
+            .final-cta-section h2 {
+                font-size: 2.5rem;
+            }
+            .final-cta-section p {
+                font-size: 1.3rem;
+                max-width: 1000px;
+            }
+            .final-cta-section .cta-button {
+                font-size: 1.2rem;
+                padding: 1rem 2.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .final-cta-section {
+                padding: 6rem 2rem;
+            }
+            .final-cta-section h2 {
+                font-size: 2.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1137,6 +1309,59 @@
         </div>
     </section>
 
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2>FAQ – najczęstsze pytania</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy muszę być na żywo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nie – dostaniesz nagranie.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy to jest płatne?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nie – darmowy udział. Możesz wykupić dodatkowe wsparcie, jeśli chcesz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy mogę zacząć później?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak, dostajesz dostęp do poprzednich materiałów i możesz nadrobić.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy potrzebuję własnej domeny?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Możesz użyć własnej, ale nie musisz – Sportigio daje Ci też subdomenę.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Dołącz do <img src="sportigio-poziom-white.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;"> PreSeason Camp</h2>
+            <p>Zacznij sezon z gotową stroną, sklepem, aplikacją i narzędziami – <strong>za darmo</strong>.</p>
+            <a href="#" class="cta-button">Zapisz się teraz</a>
+            <p class="cta-note">Dostęp po 30 sekundach, zero zobowiązań</p>
+        </div>
+    </section>
+
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1145,6 +1370,35 @@
         mobileMenuBtn.addEventListener('click', () => {
             navbarNav.classList.toggle('active');
             mobileMenuBtn.textContent = navbarNav.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                    }
+                });
+
+                // Toggle the clicked item
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = '0px';
+                }
+            });
         });
     </script>
 </body>
