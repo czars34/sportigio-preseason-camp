@@ -856,6 +856,9 @@
         .audience-content {
             max-width: 600px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .audience-box {
@@ -872,8 +875,13 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.7rem;
+        }
+
+        .audience-intro i {
+            flex-shrink: 0;
+            margin-top: 0.2em;
         }
 
         .audience-section ul {
@@ -898,6 +906,8 @@
         .audience-section li i {
             color: #fff;
             margin-top: 0.3rem;
+            flex-shrink: 0;
+            width: 1.2em;
         }
 
         /* Responsive for benefits and audience */
@@ -918,6 +928,9 @@
         }
 
         @media (min-width: 1024px) {
+            .audience-section .container {
+                max-width: 1140px;
+            }
             .benefits-section, .audience-section {
                 padding: 6rem 2rem;
             }
@@ -936,6 +949,12 @@
             }
             .audience-box {
                 padding: 3rem;
+                flex: 1;
+            }
+            .audience-content {
+                gap: 3rem;
+                flex-direction: row;
+                max-width: none;
             }
         }
     </style>
@@ -1102,6 +1121,16 @@
                         <li><i class="fas fa-check"></i> nie ma czasu na wdrożenia</li>
                         <li><i class="fas fa-check"></i> nie ma działu marketingu, ale chce coś ruszyć</li>
                         <li><i class="fas fa-check"></i> lubi działać konkretnie, krok po kroku</li>
+                    </ul>
+                </div>
+                <div class="audience-box">
+                    <p class="audience-intro"><i class="fas fa-rocket"></i> Co zrobisz już po pierwszym webinarze:</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Aktywujesz profil klubu</li>
+                        <li><i class="fas fa-check"></i> Uruchomisz prostą stronę na swojej domenie</li>
+                        <li><i class="fas fa-check"></i> Sprawdzisz dostępne narzędzia</li>
+                        <li><i class="fas fa-check"></i> Wybierzesz swój pakiet</li>
+                        <li><i class="fas fa-check"></i> Dołączysz do Campu – pełnego wsparcia</li>
                     </ul>
                 </div>
             </div>
