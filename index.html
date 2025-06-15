@@ -676,6 +676,115 @@
                 max-width: 525px;
             }
         }
+
+        /* Schedule Section */
+        .schedule-section {
+            background: linear-gradient(135deg, #0B2360 0%, #1a3a7a 100%);
+            color: white;
+            padding: 4rem 1rem;
+        }
+
+        .schedule-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .schedule-table {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .schedule-header {
+            display: none; /* Hidden on mobile */
+        }
+
+        .schedule-row {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .schedule-col {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .schedule-col:last-child {
+            margin-bottom: 0;
+        }
+
+        .schedule-col::before {
+            content: attr(data-label);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #01DFEC;
+            font-size: 0.9rem;
+        }
+
+        /* Tablet styles for schedule */
+        @media (min-width: 768px) {
+            .schedule-section {
+                padding: 5rem 2rem;
+            }
+
+            .schedule-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .schedule-header {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1.5fr;
+                gap: 1rem;
+                padding: 0 1.5rem 1rem;
+                font-weight: 700;
+                color: #01DFEC;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                margin-bottom: 1rem;
+            }
+            
+            .schedule-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1.5fr;
+                gap: 1rem;
+                padding: 1.5rem;
+                align-items: center;
+                margin-bottom: 0;
+                border-radius: 0;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .schedule-row:last-child {
+                border-bottom: none;
+            }
+
+            .schedule-col {
+                margin-bottom: 0;
+            }
+
+            .schedule-col::before {
+                display: none;
+            }
+        }
+
+        /* Desktop styles for schedule */
+        @media (min-width: 1024px) {
+            .schedule-section h2 {
+                font-size: 3rem;
+                margin-bottom: 4rem;
+            }
+            .schedule-header, .schedule-row {
+                grid-template-columns: 1fr 1.5fr 2fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -753,6 +862,49 @@
             </div>
             <div class="webinar-cta-row">
                 <a href="#" class="webinar-cta"><i class="fas fa-file-pdf"></i> Zapisz się i odbierz przewodnik PDF + dostęp do panelu</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-section" id="terminy">
+        <div class="container">
+            <h2>Terminy i tematy tygodni</h2>
+            <div class="schedule-table">
+                <div class="schedule-header">
+                    <div>Tydzień</div>
+                    <div>Temat</div>
+                    <div>Co zrobisz?</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-col" data-label="Tydzień">23–29 czerwca</div>
+                    <div class="schedule-col" data-label="Temat">Strona internetowa</div>
+                    <div class="schedule-col" data-label="Co zrobisz?">Wybierzesz szablon, wrzucisz treści, uruchomisz automatyczne wyniki</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-col" data-label="Tydzień">30.06–5 lipca</div>
+                    <div class="schedule-col" data-label="Temat">[EN] Website creation</div>
+                    <div class="schedule-col" data-label="Co zrobisz?">English version – for international clubs</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-col" data-label="Tydzień">7–12 lipca</div>
+                    <div class="schedule-col" data-label="Temat">Bilety i karnety</div>
+                    <div class="schedule-col" data-label="Co zrobisz?">Wstawisz bilety, podłączysz płatności</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-col" data-label="Tydzień">14–20 lipca</div>
+                    <div class="schedule-col" data-label="Temat">Sklep bez magazynu</div>
+                    <div class="schedule-col" data-label="Co zrobisz?">Stworzysz produkty merchu, z integracją z drukarnią</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-col" data-label="Tydzień">21–27 lipca</div>
+                    <div class="schedule-col" data-label="Temat">Fan Engagement</div>
+                    <div class="schedule-col" data-label="Co zrobisz?">Włączysz rankingi, quizy i punkty za wsparcie</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-col" data-label="Tydzień">28.07–3 sierpnia</div>
+                    <div class="schedule-col" data-label="Temat">Strefa Biznes i VIP</div>
+                    <div class="schedule-col" data-label="Co zrobisz?">Dodasz pakiety sponsorskie i obsługę VIP'ów</div>
+                </div>
             </div>
         </div>
     </section>
