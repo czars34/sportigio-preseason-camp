@@ -63,6 +63,11 @@
             align-items: center;
         }
 
+        .navbar-logo a {
+            display: flex;
+            align-items: center;
+        }
+
         .navbar-logo img {
             height: 20px;
             width: auto;
@@ -229,25 +234,26 @@
         /* Desktop styles for navbar */
         @media (min-width: 1024px) {
             .navbar {
-                padding: 0.6rem 1.5rem;
-                width: 80%;
+                padding: 0.4rem 1.2rem;
+                width: 65%;
+                max-width: 720px;
             }
 
             .navbar-logo img {
-                height: 28px;
+                height: 24px;
             }
 
             .navbar-nav {
-                gap: 2rem;
+                gap: 1.2rem;
             }
 
             .navbar-nav a {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .navbar-cta {
-                font-size: 1rem;
-                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
             }
         }
 
@@ -414,6 +420,11 @@
 
         /* Large desktop styles */
         @media (min-width: 1440px) {
+            .navbar {
+                width: 65%;
+                max-width: 720px;
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
@@ -425,9 +436,9 @@
 
         /* MacBook / medium-large laptop optimisation */
         @media (min-width: 1024px) and (max-width: 1439px) {
-            /* Navbar a bit wider so it doesn't look cramped */
+            /* Navbar narrower for compact look */
             .navbar {
-                width: 86%;
+                width: 65%;
             }
             /* Slightly smaller headline & paragraph to avoid wrapping issues */
             .hero h1 {
@@ -834,19 +845,19 @@
         .benefits-section {
             background: #fff;
             color: #0B2360;
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
         .benefits-section h2 {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .benefits-grid {
             display: grid;
-            gap: 1.5rem;
+            gap: 1rem;
             max-width: 900px;
             margin: 0 auto;
             text-align: left;
@@ -855,36 +866,37 @@
         .benefit-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 0.8rem;
             background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 5px solid #01DFEC;
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 4px solid #01DFEC;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         .benefit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(11, 35, 96, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(11, 35, 96, 0.1);
         }
 
         .benefit-icon {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #0B2360;
-            margin-top: 0.2rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
         }
 
         .benefit-item p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
-            line-height: 1.5;
+            line-height: 1.4;
             margin: 0;
             color: #0B2360;
         }
 
         /* Audience Section */
         .audience-section {
-            background: linear-gradient(135deg, #0B2360 0%, #01DFEC 100%);
+            background: linear-gradient(135deg, #0B2360 0%, #1a3a7a 100%);
             padding: 4rem 1rem;
             color: white;
         }
@@ -957,14 +969,17 @@
         /* Responsive for benefits and audience */
         @media (min-width: 768px) {
             .benefits-section, .audience-section {
-                padding: 5rem 2rem;
+                padding: 4rem 2rem;
             }
             .benefits-section h2, .audience-section h2 {
                 font-size: 2.5rem;
             }
             .benefits-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 2rem;
+                gap: 1.2rem;
+            }
+            .benefit-item {
+                padding: 1.2rem;
             }
             .audience-box {
                 padding: 2.5rem;
@@ -976,20 +991,21 @@
                 max-width: 1140px;
             }
             .benefits-section, .audience-section {
-                padding: 6rem 2rem;
+                padding: 5rem 2rem;
             }
             .benefits-section h2, .audience-section h2 {
                 font-size: 3rem;
             }
             .benefits-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             .benefit-item {
-                padding: 2rem;
+                padding: 1.5rem;
                 align-items: center;
             }
             .benefit-item p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .audience-box {
                 padding: 3rem;
@@ -1096,7 +1112,10 @@
 
         /* Final CTA Section */
         .final-cta-section {
-            background: linear-gradient(135deg, #0B2360 0%, #01DFEC 100%);
+            background: 
+                radial-gradient(circle at -10% 110%, #EA36E1 0%, transparent 40%),
+                radial-gradient(circle at 110% 110%, #01DFEC 0%, transparent 40%),
+                #0B2360;
             color: white;
             padding: 4rem 1rem;
             text-align: center;
@@ -1178,8 +1197,12 @@
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
-            <img class="logo-full" src="/sportigio-poziom-white.png" alt="Sportigio">
-            <img class="logo-sygnet" src="/sportigio-sygnet-white.png" alt="Sportigio sygnet">
+            <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
+                <img class="logo-full" src="/sportigio-poziom-white.png" alt="Sportigio">
+            </a>
+            <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
+                <img class="logo-sygnet" src="/sportigio-sygnet-white.png" alt="Sportigio sygnet">
+            </a>
         </div>
         <a href="#zapisz-sie" class="navbar-cta mobile-only">Zapisz się</a>
         <ul class="navbar-nav">
@@ -1399,7 +1422,7 @@
 
     <section class="final-cta-section" id="zapisz-sie">
         <div class="container">
-            <h2>Dołącz do <img src="sportigio-poziom-white.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;"> PreSeason Camp</h2>
+            <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="sportigio-poziom-white.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;"></a> PreSeason Camp</h2>
             <p>Zacznij sezon z gotową stroną, sklepem, aplikacją i narzędziami – <strong>za darmo</strong>.</p>
             <a href="#" class="cta-button">Zapisz się teraz</a>
             <p class="cta-note">Dostęp po 30 sekundach, zero zobowiązań</p>
