@@ -27,11 +27,6 @@
             top: 1rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(11, 35, 96, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
             padding: 0.4rem 0.8rem;
             display: flex;
             align-items: center;
@@ -40,6 +35,21 @@
             z-index: 1000;
             width: 90%;
             max-width: 900px;
+        }
+
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 35, 96, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            z-index: -1;
         }
 
         .navbar-logo {
@@ -70,9 +80,8 @@
         @media (max-width: 767px) {
             /* Keep blur but slightly darker background */
             .navbar {
-                background: rgba(11, 35, 96, 0.8);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
+                left: 5%;
+                transform: none;
             }
 
             /* Swap logos */
@@ -168,24 +177,20 @@
         }
 
         .navbar-nav.active {
-            position: fixed;
-            top: 5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 900px;
-            z-index: 1100;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(11, 35, 96, 0.8);
-            border-radius: 20px;
-            padding: 1rem 0.5rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
             gap: 1rem;
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            width: 100%;
+            background: rgba(11, 35, 96, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1rem 0.5rem;
+            z-index: 1100;
         }
 
         /* Tablet styles for navbar */
@@ -193,6 +198,8 @@
             .navbar {
                 padding: 0.5rem 1.2rem;
                 width: 85%;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .navbar-logo img {
@@ -678,15 +685,14 @@
             <img class="logo-sygnet" src="/sportigio-sygnet-white.png" alt="Sportigio sygnet">
         </div>
         <a href="#" class="navbar-cta mobile-only">Zapisz się</a>
+        <ul class="navbar-nav">
+            <li><a href="#terminy">Terminy</a></li>
+            <li><a href="#zyskujesz">Co zyskujesz?</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
         <a href="#" class="navbar-cta desktop-only">Zapisz się</a>
         <button class="mobile-menu-btn">☰</button>
     </nav>
-
-    <ul class="navbar-nav">
-        <li><a href="#terminy">Terminy</a></li>
-        <li><a href="#zyskujesz">Co zyskujesz?</a></li>
-        <li><a href="#faq">FAQ</a></li>
-    </ul>
 
     <section class="hero">
         <div class="hero-content">
