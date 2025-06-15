@@ -39,6 +39,8 @@
             z-index: 1000;
             width: 90%;
             max-width: 900px;
+            border-radius: 50px;
+            overflow: hidden;
         }
 
         .navbar::before {
@@ -330,6 +332,24 @@
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
         }
 
+        /* Smaller CTA button just for hero */
+        .hero .cta-button {
+            font-size: 0.9rem;
+            padding: 0.7rem 1.6rem;
+        }
+        @media (min-width: 768px) {
+            .hero .cta-button {
+                font-size: 1.1rem;
+                padding: 1rem 2.3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero .cta-button {
+                font-size: 1.2rem;
+                padding: 1.1rem 2.6rem;
+            }
+        }
+
         /* Tablet styles */
         @media (min-width: 768px) {
             .hero {
@@ -400,6 +420,26 @@
             
             .hero p {
                 font-size: 1.4rem;
+            }
+        }
+
+        /* MacBook / medium-large laptop optimisation */
+        @media (min-width: 1024px) and (max-width: 1439px) {
+            /* Navbar a bit wider so it doesn't look cramped */
+            .navbar {
+                width: 86%;
+            }
+            /* Slightly smaller headline & paragraph to avoid wrapping issues */
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.15rem;
+            }
+            /* Image stays inside its column with more right margin */
+            .hero-image img {
+                max-width: 95%;
+                margin-right: 2rem;
             }
         }
 
