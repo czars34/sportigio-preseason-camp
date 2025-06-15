@@ -93,6 +93,8 @@
             .navbar {
                 left: 5%;
                 transform: none;
+                /* Allow dropdown to extend below the navbar */
+                overflow: visible;
             }
 
             /* Swap logos */
@@ -183,6 +185,11 @@
             background: none;
             border: none;
             color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.2rem;
             cursor: pointer;
         }
@@ -632,6 +639,9 @@
             flex-wrap: wrap;
             text-align: center;
         }
+        .webinar-section h2 i {
+            display: none;
+        }
         .webinar-date {
             display: flex;
             align-items: center;
@@ -645,6 +655,7 @@
         .webinar-icon {
             color: #0B2360;
             font-size: 1.3rem;
+            display: none;
         }
         .webinar-topics h3 {
             font-size: 1.2rem;
@@ -711,6 +722,12 @@
             }
             .webinar-section h2 {
                 font-size: 2.3rem;
+            }
+            .webinar-section h2 i {
+                display: inline;
+            }
+            .webinar-icon {
+                display: inline;
             }
             .webinar-topics ul {
                 font-size: 1.1rem;
@@ -944,26 +961,38 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            text-align: left;
         }
 
         .audience-section li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .audience-section li:last-child {
-            margin-bottom: 0;
+            /* Switch to block layout so multiline items align */
+            display: block;
+            position: relative;
+            padding-left: 1.8rem; /* space for icon */
+            gap: 0; /* not used in block layout */
         }
 
         .audience-section li i {
-            color: #fff;
-            margin-top: 0.3rem;
-            flex-shrink: 0;
-            width: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+        }
+
+        /* Fine-tune spacing just for mobile */
+        @media (max-width: 767px) {
+            .audience-section li {
+                gap: 0.6rem;
+            }
+            .audience-section li i {
+                width: 1em; /* narrower so text starts bliżej */
+                margin-top: 0.2rem;
+            }
+            .audience-intro {
+                align-items: center; /* rocket vertically centered */
+            }
+            .audience-intro i {
+                margin-top: 0; /* reset shift */
+            }
         }
 
         /* Responsive for benefits and audience */
@@ -1211,7 +1240,8 @@
             <li><a href="#faq">FAQ</a></li>
         </ul>
         <a href="#zapisz-sie" class="navbar-cta desktop-only">Zapisz się</a>
-        <button class="mobile-menu-btn">☰</button>
+        <!-- Hamburger / close icon now uses Font Awesome -->
+        <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
     </nav>
 
     <section class="hero">
@@ -1355,11 +1385,11 @@
                 <div class="audience-box">
                     <p class="audience-intro"><i class="fas fa-bullseye"></i> Dla każdego klubu, który:</p>
                     <ul>
-                        <li><i class="fas fa-check"></i> chce być lepiej widoczny</li>
-                        <li><i class="fas fa-check"></i> szuka sposobu na nowe przychody</li>
-                        <li><i class="fas fa-check"></i> nie ma czasu na wdrożenia</li>
-                        <li><i class="fas fa-check"></i> nie ma działu marketingu, ale chce coś ruszyć</li>
-                        <li><i class="fas fa-check"></i> lubi działać konkretnie, krok po kroku</li>
+                        <li><i class="fas fa-check"></i> Chce być lepiej widoczny</li>
+                        <li><i class="fas fa-check"></i> Szuka sposobu na nowe przychody</li>
+                        <li><i class="fas fa-check"></i> Nie ma czasu na wdrożenia</li>
+                        <li><i class="fas fa-check"></i> Nie ma działu marketingu, ale chce coś ruszyć</li>
+                        <li><i class="fas fa-check"></i> Lubi działać konkretnie, krok po kroku</li>
                     </ul>
                 </div>
                 <div class="audience-box">
@@ -1436,7 +1466,10 @@
 
         mobileMenuBtn.addEventListener('click', () => {
             navbarNav.classList.toggle('active');
-            mobileMenuBtn.textContent = navbarNav.classList.contains('active') ? '✖' : '☰';
+            // Swap icon between hamburger and close (Font Awesome)
+            mobileMenuBtn.innerHTML = navbarNav.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
         });
 
         // FAQ Accordion
