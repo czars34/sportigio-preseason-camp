@@ -110,6 +110,14 @@
                 display: block;
             }
             /* Keep CTA visible on mobile */
+            /* Center the mobile CTA horizontally & vertically inside the navbar */
+            .navbar-cta.mobile-only {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1001; /* above blur layer */
+            }
 
             /* Center dropdown items */
             .navbar-nav.active {
