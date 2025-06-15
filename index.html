@@ -90,67 +90,20 @@
             /* Keep CTA visible on mobile */
 
             /* Center dropdown items */
-            .mobile-nav.active {
-                position: fixed;
-                top: 5rem;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90%;
-                max-width: 900px;
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                background: rgba(11, 35, 96, 0.8);
-                border-radius: 20px;
-                padding: 1rem 0.5rem;
-                display: flex;
-                flex-direction: column;
+            .navbar-nav.active {
                 align-items: center;
                 text-align: center;
-                gap: 1rem;
             }
 
-            /* Hero adjustments for mobile */
+            /* Hero minor tweaks for very small screens */
             .hero {
-                padding: 6rem 1.5rem 3rem; /* More horizontal padding */
+                padding-top: 6rem;
             }
             .hero h1 {
-                font-size: 1.5rem;
-                line-height: 1.3;
+                font-size: 1.4rem;
             }
             .hero p {
                 font-size: 1rem;
-            }
-            .hero .cta-button {
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
-                white-space: normal; /* Allow wrapping for cta button */
-                line-height: 1.4;
-            }
-
-            /* Webinar section adjustments for mobile */
-            .webinar-section {
-                padding: 3rem 1.5rem;
-            }
-            .webinar-section h2 {
-                font-size: 1.6rem;
-                white-space: normal; /* Allow wrapping */
-                line-height: 1.3;
-            }
-            .webinar-date {
-                font-size: 1rem;
-                flex-direction: column; /* Stack icon and text */
-                gap: 0.5rem;
-                text-align: center;
-            }
-            .webinar-topics ul {
-                padding: 0;
-            }
-            .webinar-cta {
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
-                white-space: normal; /* Allow button text to wrap */
-                text-align: center;
-                line-height: 1.4;
             }
 
             /* Hide desktop CTA on mobile */
@@ -160,18 +113,15 @@
         }
 
         .navbar-nav {
+            display: none;
             list-style: none;
             margin: 0;
             padding: 0;
             gap: 1.5rem;
         }
 
-        .desktop-nav {
-            display: none;
-        }
-
-        .mobile-nav {
-            display: none;
+        .navbar-nav li {
+            margin: 0;
         }
 
         .navbar-nav a {
@@ -217,9 +167,25 @@
             cursor: pointer;
         }
 
-        .mobile-nav.active {
-            display: flex;
+        .navbar-nav.active {
+            position: fixed;
+            top: 5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 900px;
             z-index: 1100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(11, 35, 96, 0.8);
+            border-radius: 20px;
+            padding: 1rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Tablet styles for navbar */
@@ -233,7 +199,7 @@
                 height: 24px;
             }
 
-            .desktop-nav {
+            .navbar-nav {
                 display: flex;
             }
 
@@ -277,7 +243,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 5rem 1rem 2rem;
+            padding: 4rem 1rem 2rem;
             background: url('FULL_HD_gradient_lossless.webp') center center/cover no-repeat;
             position: relative;
             overflow: hidden;
@@ -297,17 +263,17 @@
         }
 
         .hero h1 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: white;
             line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 400;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             color: white;
             opacity: 0.95;
             line-height: 1.6;
@@ -333,9 +299,9 @@
             background-color: white;
             color: black;
             font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 700;
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 1.8rem;
             border: none;
             border-radius: 50px;
             text-decoration: none;
@@ -585,7 +551,7 @@
         .webinar-section {
             background: #fff;
             color: #111;
-            padding: 4rem 1rem 3rem;
+            padding: 3rem 1rem 2.5rem;
         }
         .webinar-section .container {
             max-width: 1000px;
@@ -593,24 +559,26 @@
             text-align: center;
         }
         .webinar-section h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             color: #0B2360;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.7rem;
-            flex-wrap: nowrap;
-            white-space: nowrap;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            text-align: center;
         }
         .webinar-date {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.7rem;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            gap: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
         }
         .webinar-icon {
             color: #0B2360;
@@ -657,13 +625,15 @@
             background: #0B2360;
             color: #fff;
             font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            padding: 1rem 2.2rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
             transition: background 0.3s, color 0.3s, transform 0.2s;
             box-shadow: 0 4px 15px rgba(11, 35, 96, 0.08);
+            text-align: center;
+            line-height: 1.3;
         }
         .webinar-cta i {
             margin-right: 0.7rem;
@@ -708,15 +678,11 @@
             <img class="logo-sygnet" src="/sportigio-sygnet-white.png" alt="Sportigio sygnet">
         </div>
         <a href="#" class="navbar-cta mobile-only">Zapisz się</a>
-        <ul class="navbar-nav desktop-nav">
-            <li><a href="#terminy">Terminy</a></li>
-            <li><a href="#zyskujesz">Co zyskujesz?</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
         <a href="#" class="navbar-cta desktop-only">Zapisz się</a>
         <button class="mobile-menu-btn">☰</button>
     </nav>
-    <ul class="navbar-nav mobile-nav">
+
+    <ul class="navbar-nav">
         <li><a href="#terminy">Terminy</a></li>
         <li><a href="#zyskujesz">Co zyskujesz?</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -788,11 +754,11 @@
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.querySelector('.mobile-nav');
+        const navbarNav = document.querySelector('.navbar-nav');
 
         mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            mobileMenuBtn.textContent = mobileNav.classList.contains('active') ? '✖' : '☰';
+            navbarNav.classList.toggle('active');
+            mobileMenuBtn.textContent = navbarNav.classList.contains('active') ? '✖' : '☰';
         });
     </script>
 </body>
