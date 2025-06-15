@@ -785,6 +785,159 @@
                 grid-template-columns: 1fr 1.5fr 2fr;
             }
         }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: #fff;
+            color: #0B2360;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .benefits-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #01DFEC;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(11, 35, 96, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: #0B2360;
+            margin-top: 0.2rem;
+        }
+
+        .benefit-item p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+            color: #0B2360;
+        }
+
+        /* Audience Section */
+        .audience-section {
+            background: linear-gradient(135deg, #0B2360 0%, #01DFEC 100%);
+            padding: 4rem 1rem;
+            color: white;
+        }
+
+        .audience-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .audience-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .audience-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .audience-intro {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .audience-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .audience-section li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .audience-section li:last-child {
+            margin-bottom: 0;
+        }
+
+        .audience-section li i {
+            color: #fff;
+            margin-top: 0.3rem;
+        }
+
+        /* Responsive for benefits and audience */
+        @media (min-width: 768px) {
+            .benefits-section, .audience-section {
+                padding: 5rem 2rem;
+            }
+            .benefits-section h2, .audience-section h2 {
+                font-size: 2.5rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .audience-box {
+                padding: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-section, .audience-section {
+                padding: 6rem 2rem;
+            }
+            .benefits-section h2, .audience-section h2 {
+                font-size: 3rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefit-item {
+                padding: 2rem;
+                align-items: center;
+            }
+            .benefit-item p {
+                font-size: 1.2rem;
+            }
+            .audience-box {
+                padding: 3rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -904,6 +1057,52 @@
                     <div class="schedule-col" data-label="Tydzień">28.07–3 sierpnia</div>
                     <div class="schedule-col" data-label="Temat">Strefa Biznes i VIP</div>
                     <div class="schedule-col" data-label="Co zrobisz?">Dodasz pakiety sponsorskie i obsługę VIP'ów</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section" id="zyskujesz">
+        <div class="container">
+            <h2>Co zyskujesz jako uczestnik?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                    <p>Konto i profil klubu w Sportigio (darmowy plan)</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                    <p>Dostęp do panelu i narzędzi (strona, FanApp, bilety, sklep)</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                    <p>Gotowe szablony, checklisty, przewodniki</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                    <p>Grupa wsparcia i konsultacje z zespołem Sportigio</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                    <p>Dostęp do nagrań – jeśli nie możesz być na żywo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience-section">
+        <div class="container">
+            <h2>Dla kogo to jest?</h2>
+            <div class="audience-content">
+                <div class="audience-box">
+                    <p class="audience-intro"><i class="fas fa-bullseye"></i> Dla każdego klubu, który:</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> chce być lepiej widoczny</li>
+                        <li><i class="fas fa-check"></i> szuka sposobu na nowe przychody</li>
+                        <li><i class="fas fa-check"></i> nie ma czasu na wdrożenia</li>
+                        <li><i class="fas fa-check"></i> nie ma działu marketingu, ale chce coś ruszyć</li>
+                        <li><i class="fas fa-check"></i> lubi działać konkretnie, krok po kroku</li>
+                    </ul>
                 </div>
             </div>
         </div>
