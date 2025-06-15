@@ -129,13 +129,6 @@
             .hero {
                 padding-top: 6rem;
             }
-            .hero h1 {
-                font-size: 1.4rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-
             /* Hide desktop CTA on mobile */
             .desktop-only {
                 display: none !important;
@@ -170,7 +163,8 @@
             background-color: white;
             color: #0B2360 !important;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.8rem;
+            /* Responsive sizing now handled once with clamp() */
+            font-size: clamp(0.8rem, 0.72rem + 0.2vw, 0.9rem);
             font-weight: 700;
             padding: 0.4rem 1rem;
             border: none;
@@ -241,7 +235,6 @@
             }
 
             .navbar-cta {
-                font-size: 0.9rem;
                 padding: 0.5rem 1.2rem;
             }
         }
@@ -262,12 +255,7 @@
                 gap: 1.2rem;
             }
 
-            .navbar-nav a {
-                font-size: 0.9rem;
-            }
-
             .navbar-cta {
-                font-size: 0.9rem;
                 padding: 0.5rem 1rem;
             }
         }
@@ -297,7 +285,8 @@
         }
 
         .hero h1 {
-            font-size: 1.4rem;
+            /* Responsive sizing now handled once with clamp() */
+            font-size: clamp(1.4rem, 1.05rem + 2vw, 2.8rem);
             font-weight: 700;
             margin-bottom: 1.2rem;
             color: white;
@@ -305,7 +294,8 @@
         }
 
         .hero p {
-            font-size: 1rem;
+            /* Responsive sizing now handled once with clamp() */
+            font-size: clamp(1rem, 0.85rem + 1vw, 1.4rem);
             font-weight: 400;
             margin-bottom: 2rem;
             color: white;
@@ -355,18 +345,17 @@
 
         /* Smaller CTA button just for hero */
         .hero .cta-button {
-            font-size: 0.9rem;
+            /* Responsive sizing now handled once with clamp() */
+            font-size: clamp(0.9rem, 0.9rem + 0.3vw, 1.2rem);
             padding: 0.7rem 1.6rem;
         }
         @media (min-width: 768px) {
             .hero .cta-button {
-                font-size: 1.1rem;
                 padding: 1rem 2.3rem;
             }
         }
         @media (min-width: 1024px) {
             .hero .cta-button {
-                font-size: 1.2rem;
                 padding: 1.1rem 2.6rem;
             }
         }
@@ -385,21 +374,6 @@
             .hero-text {
                 text-align: left;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-                margin-bottom: 3rem;
-            }
-            
-            .cta-button {
-                font-size: 1.3rem;
-                padding: 1.2rem 3rem;
-            }
         }
 
         /* Desktop styles */
@@ -416,37 +390,6 @@
             .hero-image img {
                 max-width: 120%;
             }
-            
-            .hero h1 {
-                font-size: 2.4rem;
-                margin-bottom: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-                margin-bottom: 3.5rem;
-            }
-            
-            .cta-button {
-                font-size: 1.4rem;
-                padding: 1.3rem 3.5rem;
-            }
-        }
-
-        /* Large desktop styles */
-        @media (min-width: 1440px) {
-            .navbar {
-                width: 65%;
-                max-width: 720px;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.4rem;
-            }
         }
 
         /* MacBook / medium-large laptop optimisation */
@@ -454,13 +397,6 @@
             /* Navbar narrower for compact look */
             .navbar {
                 width: 65%;
-            }
-            /* Slightly smaller headline & paragraph to avoid wrapping issues */
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1.15rem;
             }
             /* Image stays inside its column with more right margin */
             .hero-image img {
@@ -542,7 +478,8 @@
         }
 
         .feature p {
-            font-size: 1.1rem;
+            /* Responsive sizing now handled once with clamp() */
+            font-size: clamp(1.1rem, 0.95rem + 0.3vw, 1.2rem);
             font-weight: 500;
             color: white;
             margin: 0;
@@ -581,10 +518,6 @@
                 font-size: 2rem;
                 color: white;
             }
-            
-            .feature p {
-                font-size: 1.2rem;
-            }
         }
 
         /* Desktop styles for about section */
@@ -618,10 +551,6 @@
                 font-size: 2.2rem;
                 margin-bottom: 2rem;
                 color: white;
-            }
-            
-            .feature p {
-                font-size: 1.1rem;
             }
         }
 
@@ -1105,22 +1034,22 @@
         }
 
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .faq-answer p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
             padding-bottom: 1.5rem;
-            font-weight: 400;
         }
 
-        .faq-item.active .faq-question i {
+        /* Hide answers when details is closed */
+        details:not([open]) .faq-answer {
+            display: none;
+        }
+
+        /* Rotate icon when open */
+        .faq-item[open] .faq-question i {
             transform: rotate(180deg);
+        }
+
+        /* Remove default marker for summary */
+        .faq-question::-webkit-details-marker {
+            display: none;
         }
 
         @media (min-width: 768px) {
@@ -1229,16 +1158,23 @@
                 font-size: 2.8rem;
             }
         }
+
+        @media (min-width: 1440px) {
+            .navbar {
+                width: 65%;
+                max-width: 720px;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
             <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
-                <img class="logo-full" src="/sportigio-poziom-white.png" alt="Sportigio">
+                <img class="logo-full" src="/sportigio-poziom-white.png" alt="Sportigio" loading="lazy">
             </a>
             <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
-                <img class="logo-sygnet" src="/sportigio-sygnet-white.png" alt="Sportigio sygnet">
+                <img class="logo-sygnet" src="/sportigio-sygnet-white.png" alt="Sportigio sygnet" loading="lazy">
             </a>
         </div>
         <a href="#zapisz-sie" class="navbar-cta mobile-only">Zapisz się</a>
@@ -1249,7 +1185,7 @@
         </ul>
         <a href="#zapisz-sie" class="navbar-cta desktop-only">Zapisz się</a>
         <!-- Hamburger / close icon now uses Font Awesome -->
-        <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
     </nav>
 
     <section class="hero">
@@ -1260,7 +1196,7 @@
                 <a href="#zapisz-sie" class="cta-button">Zapisz się bezpłatnie i zacznij działać</a>
             </div>
             <div class="hero-image">
-                <img src="Zrzut ekranu 2025-06-14 184815.png" alt="Kairoz Platform Screenshot">
+                <img src="Zrzut ekranu 2025-06-14 184815.png" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
             </div>
         </div>
     </section>
@@ -1418,49 +1354,49 @@
         <div class="container">
             <h2>FAQ – najczęstsze pytania</h2>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question">
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>Czy muszę być na żywo?</span>
                         <i class="fas fa-chevron-down"></i>
-                    </button>
+                    </summary>
                     <div class="faq-answer">
                         <p>Nie – dostaniesz nagranie.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>Czy to jest płatne?</span>
                         <i class="fas fa-chevron-down"></i>
-                    </button>
+                    </summary>
                     <div class="faq-answer">
                         <p>Nie – darmowy udział. Możesz wykupić dodatkowe wsparcie, jeśli chcesz.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>Czy mogę zacząć później?</span>
                         <i class="fas fa-chevron-down"></i>
-                    </button>
+                    </summary>
                     <div class="faq-answer">
                         <p>Tak, dostajesz dostęp do poprzednich materiałów i możesz nadrobić.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>Czy potrzebuję własnej domeny?</span>
                         <i class="fas fa-chevron-down"></i>
-                    </button>
+                    </summary>
                     <div class="faq-answer">
                         <p>Możesz użyć własnej, ale nie musisz – Sportigio daje Ci też subdomenę.</p>
                     </div>
-                </div>
+                </details>
             </div>
         </div>
     </section>
 
     <section class="final-cta-section" id="zapisz-sie">
         <div class="container">
-            <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="sportigio-poziom-white.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;"></a> PreSeason Camp</h2>
+            <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="sportigio-poziom-white.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> PreSeason Camp</h2>
             <p>Zacznij sezon z gotową stroną, sklepem,<br class="mobile-only"> aplikacją i narzędziami – <strong>za darmo</strong>.</p>
             <a href="#" class="cta-button">Zapisz się teraz</a>
             <p class="cta-note">Dostęp po 30 sekundach, zero zobowiązań</p>
@@ -1468,45 +1404,24 @@
     </section>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navbarNav = document.querySelector('.navbar-nav');
+        // Mobile menu toggle – simplified, click only
+        const nav  = document.querySelector('.navbar-nav');
+        const btn  = document.querySelector('.mobile-menu-btn');
+        const icon = btn.querySelector('i');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navbarNav.classList.toggle('active');
-            // Swap icon between hamburger and close (Font Awesome)
-            mobileMenuBtn.innerHTML = navbarNav.classList.contains('active')
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
+        btn.addEventListener('click', () => {
+            const opened = nav.classList.toggle('active');
+            btn.setAttribute('aria-expanded', opened);
+            icon.className = opened ? 'fas fa-times' : 'fas fa-bars';
         });
 
-        // FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
-                    }
-                });
-
-                // Toggle the clicked item
-                if (!isActive) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                } else {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = '0px';
-                }
-            });
+        // Close menu after clicking any link inside
+        nav.addEventListener('click', (e) => {
+            if (e.target.matches('a') && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                btn.setAttribute('aria-expanded', false);
+                icon.className = 'fas fa-bars';
+            }
         });
     </script>
 </body>
