@@ -589,10 +589,20 @@
             flex-wrap: wrap;
             text-align: center;
         }
+        /* Desktop: keep icon and text in one line */
+        @media (min-width: 768px) {
+            .webinar-date {
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+            .webinar-icon {
+                display: inline-block; /* show on desktop */
+            }
+        }
         .webinar-icon {
             color: #0B2360;
-            font-size: 1.3rem;
-            display: none;
+            font-size: 1.1rem;
+            display: none; /* hidden on mobile */
         }
         .webinar-topics h3 {
             font-size: 1.2rem;
@@ -635,9 +645,9 @@
             background: #0B2360;
             color: #fff;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.85rem; /* smaller */
             font-weight: 700;
-            padding: 0.9rem 1.8rem;
+            padding: 0.7rem 1.4rem; /* slimmer */
             border-radius: 50px;
             text-decoration: none;
             transition: background 0.3s, color 0.3s, transform 0.2s;
@@ -663,11 +673,14 @@
             .webinar-section h2 i {
                 display: inline;
             }
-            .webinar-icon {
-                display: inline;
-            }
+            /* calendar icon already visible by default */
             .webinar-topics ul {
                 font-size: 1.1rem;
+            }
+            /* slightly bigger CTA on desktop but still smaller than before */
+            .webinar-cta {
+                font-size: 1rem;
+                padding: 0.9rem 2rem;
             }
         }
         @media (min-width: 1024px) {
@@ -677,12 +690,40 @@
             .webinar-section h2 {
                 font-size: 2.7rem;
             }
-            .webinar-cta {
-                font-size: 1.2rem;
-                padding: 1.2rem 2.8rem;
-            }
             .webinar-topics ul {
                 max-width: 525px;
+            }
+        }
+
+        /* NEW ─ Webinar layout with image */
+        .webinar-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+        .webinar-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(11, 35, 96, 0.15);
+        }
+        .webinar-info {
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .webinar-layout {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .webinar-image,
+            .webinar-info {
+                flex: 1;
+            }
+            .webinar-info {
+                padding-left: 2rem;
             }
         }
 
@@ -701,39 +742,108 @@
             color: white;
         }
 
-        .schedule-table {
-            max-width: 1000px;
+        .schedule-cards {
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+            grid-auto-rows: 1fr;
         }
 
-        .schedule-header {
-            display: none; /* Hidden on mobile */
-        }
-
-        .schedule-row {
+        .schedule-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(1, 223, 236, 0.3);
+        }
+
+        .schedule-card.active {
+            background: rgba(1, 223, 236, 0.1);
+            border-color: #01DFEC;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(1, 223, 236, 0.2);
+        }
+
+        .schedule-card.active::before {
+            background: linear-gradient(90deg, #01DFEC 0%, #00c4d1 100%);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .schedule-col {
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .schedule-col:last-child {
-            margin-bottom: 0;
-        }
-
-        .schedule-col::before {
-            content: attr(data-label);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.5rem;
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(1, 223, 236, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             color: #01DFEC;
+            flex-shrink: 0;
+        }
+
+        .schedule-card.active .card-icon {
+            background: rgba(1, 223, 236, 0.3);
+            color: white;
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #01DFEC;
+            margin-bottom: 0.2rem;
+        }
+
+        .schedule-card.active .card-date {
+            color: white;
+        }
+
+        .card-title {
             font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-top: 0.8rem;
+            min-height: 3.5em;
+        }
+
+        .schedule-card.active .card-description {
+            color: rgba(255, 255, 255, 0.95);
         }
 
         /* Tablet styles for schedule */
@@ -747,51 +857,63 @@
                 margin-bottom: 3rem;
             }
 
-            .schedule-header {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1.5fr;
-                gap: 1rem;
-                padding: 0 1.5rem 1rem;
-                font-weight: 700;
-                color: #01DFEC;
-                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-                margin-bottom: 1rem;
-            }
-            
-            .schedule-row {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1.5fr;
-                gap: 1rem;
-                padding: 1.5rem;
-                align-items: center;
-                margin-bottom: 0;
-                border-radius: 0;
-                background: transparent;
-                border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            .schedule-cards {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
             }
 
-            .schedule-row:last-child {
-                border-bottom: none;
+            .schedule-card {
+                padding: 2rem;
             }
 
-            .schedule-col {
-                margin-bottom: 0;
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
             }
 
-            .schedule-col::before {
-                display: none;
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .card-description {
+                font-size: 1rem;
             }
         }
 
         /* Desktop styles for schedule */
         @media (min-width: 1024px) {
+            .schedule-section {
+                padding: 6rem 2rem;
+            }
+
             .schedule-section h2 {
                 font-size: 3rem;
                 margin-bottom: 4rem;
             }
-            .schedule-header, .schedule-row {
-                grid-template-columns: 1fr 1.5fr 2fr;
+
+            .schedule-cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .schedule-card {
+                padding: 2.5rem;
+            }
+
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            .card-description {
+                font-size: 1.1rem;
+                margin-top: 1rem;
             }
         }
 
@@ -1231,64 +1353,113 @@
     <section class="webinar-section">
         <div class="container">
             <h2><i class="fas fa-play-circle"></i> Start: Webinar otwierający – 23 czerwca</h2>
-            <div class="webinar-date">
-                <span class="webinar-icon"><i class="fas fa-calendar-alt"></i></span>
-                <span class="webinar-date-text">Termin: 23 czerwca, godz. XX:XX (lub: dostępne nagranie)</span>
-            </div>
-            <div class="webinar-topics">
-                <h3>Tematy:</h3>
-                <ul>
-                    <li>Nowości w Sportigio 2025</li>
-                    <li>Jak działa darmowy plan</li>
-                    <li>Jak zacząć od strony, aplikacji i prostych narzędzi</li>
-                    <li>Pokaz kreatora strony w 5 minut</li>
-                    <li>Przykłady klubów i Q&amp;A</li>
-                </ul>
-            </div>
-            <div class="webinar-cta-row">
-                <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-file-pdf"></i> Zapisz się i odbierz przewodnik PDF + dostęp do panelu</a>
-            </div>
+            <!-- NEW layout wrapper -->
+            <div class="webinar-layout">
+                <div class="webinar-image">
+                    <img src="P2288552a.jpg" alt="Webinar prezentacja Sportigio" loading="lazy">
+                </div>
+                <div class="webinar-info">
+                    <div class="webinar-date">
+                        <span class="webinar-date-text">Termin: 23 czerwca, godz. XX:XX (lub: dostępne nagranie)</span>
+                    </div>
+                    <div class="webinar-topics">
+                        <h3>Tematy:</h3>
+                        <ul>
+                            <li>Nowości w Sportigio 2025</li>
+                            <li>Jak działa darmowy plan</li>
+                            <li>Jak zacząć od strony, aplikacji i prostych narzędzi</li>
+                            <li>Pokaz kreatora strony w 5 minut</li>
+                            <li>Przykłady klubów i Q&amp;A</li>
+                        </ul>
+                    </div>
+                    <div class="webinar-cta-row">
+                        <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-file-pdf"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
+                    </div>
+                </div><!-- /.webinar-info -->
+            </div><!-- /.webinar-layout -->
         </div>
     </section>
 
     <section class="schedule-section" id="terminy">
         <div class="container">
             <h2>Terminy i tematy tygodni</h2>
-            <div class="schedule-table">
-                <div class="schedule-header">
-                    <div>Tydzień</div>
-                    <div>Temat</div>
-                    <div>Co zrobisz?</div>
+            <div class="schedule-cards">
+                <div class="schedule-card" data-week="1">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <div class="card-date">23–29 czerwca</div>
+                            <h3 class="card-title">Strona internetowa</h3>
+                        </div>
+                    </div>
+                    <p class="card-description">Wybierzesz szablon, wrzucisz treści, uruchomisz automatyczne wyniki</p>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-col" data-label="Tydzień">23–29 czerwca</div>
-                    <div class="schedule-col" data-label="Temat">Strona internetowa</div>
-                    <div class="schedule-col" data-label="Co zrobisz?">Wybierzesz szablon, wrzucisz treści, uruchomisz automatyczne wyniki</div>
+
+                <div class="schedule-card" data-week="2">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div>
+                            <div class="card-date">30.06–5 lipca</div>
+                            <h3 class="card-title">[EN] Website creation</h3>
+                        </div>
+                    </div>
+                    <p class="card-description">English version – for international clubs</p>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-col" data-label="Tydzień">30.06–5 lipca</div>
-                    <div class="schedule-col" data-label="Temat">[EN] Website creation</div>
-                    <div class="schedule-col" data-label="Co zrobisz?">English version – for international clubs</div>
+
+                <div class="schedule-card" data-week="3">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <div>
+                            <div class="card-date">7–12 lipca</div>
+                            <h3 class="card-title">Bilety i karnety</h3>
+                        </div>
+                    </div>
+                    <p class="card-description">Wstawisz bilety, podłączysz płatności</p>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-col" data-label="Tydzień">7–12 lipca</div>
-                    <div class="schedule-col" data-label="Temat">Bilety i karnety</div>
-                    <div class="schedule-col" data-label="Co zrobisz?">Wstawisz bilety, podłączysz płatności</div>
+
+                <div class="schedule-card" data-week="4">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div>
+                            <div class="card-date">14–20 lipca</div>
+                            <h3 class="card-title">Sklep bez magazynu</h3>
+                        </div>
+                    </div>
+                    <p class="card-description">Stworzysz produkty merchu, z integracją z drukarnią</p>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-col" data-label="Tydzień">14–20 lipca</div>
-                    <div class="schedule-col" data-label="Temat">Sklep bez magazynu</div>
-                    <div class="schedule-col" data-label="Co zrobisz?">Stworzysz produkty merchu, z integracją z drukarnią</div>
+
+                <div class="schedule-card" data-week="5">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div>
+                            <div class="card-date">21–27 lipca</div>
+                            <h3 class="card-title">Fan Engagement</h3>
+                        </div>
+                    </div>
+                    <p class="card-description">Włączysz rankingi, quizy i punkty za wsparcie</p>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-col" data-label="Tydzień">21–27 lipca</div>
-                    <div class="schedule-col" data-label="Temat">Fan Engagement</div>
-                    <div class="schedule-col" data-label="Co zrobisz?">Włączysz rankingi, quizy i punkty za wsparcie</div>
-                </div>
-                <div class="schedule-row">
-                    <div class="schedule-col" data-label="Tydzień">28.07–3 sierpnia</div>
-                    <div class="schedule-col" data-label="Temat">Strefa Biznes i VIP</div>
-                    <div class="schedule-col" data-label="Co zrobisz?">Dodasz pakiety sponsorskie i obsługę VIP'ów</div>
+
+                <div class="schedule-card" data-week="6">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div>
+                            <div class="card-date">28.07–3 sierpnia</div>
+                            <h3 class="card-title">Strefa Biznes i VIP</h3>
+                        </div>
+                    </div>
+                    <p class="card-description">Dodasz pakiety sponsorskie i obsługę VIP'ów</p>
                 </div>
             </div>
         </div>
@@ -1423,6 +1594,44 @@
                 icon.className = 'fas fa-bars';
             }
         });
+
+        // Schedule cards auto-activation based on current date
+        function setActiveScheduleCard() {
+            const scheduleCards = document.querySelectorAll('.schedule-card');
+            const today = new Date();
+            
+            // Define start dates for each week (2025)
+            const weekStartDates = [
+                new Date(2025, 5, 23), // 23 czerwca (month is 0-indexed)
+                new Date(2025, 5, 30), // 30 czerwca
+                new Date(2025, 6, 7),  // 7 lipca
+                new Date(2025, 6, 14), // 14 lipca
+                new Date(2025, 6, 21), // 21 lipca
+                new Date(2025, 6, 28)  // 28 lipca
+            ];
+            
+            // Find the current active week
+            let activeWeekIndex = 0;
+            
+            for (let i = 0; i < weekStartDates.length; i++) {
+                if (today >= weekStartDates[i]) {
+                    activeWeekIndex = i;
+                } else {
+                    break;
+                }
+            }
+            
+            // Remove active class from all cards
+            scheduleCards.forEach(card => card.classList.remove('active'));
+            
+            // Add active class to current week card
+            if (scheduleCards[activeWeekIndex]) {
+                scheduleCards[activeWeekIndex].classList.add('active');
+            }
+        }
+        
+        // Set active card on page load
+        setActiveScheduleCard();
     </script>
 </body>
 </html>
