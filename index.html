@@ -89,12 +89,10 @@
 
         /* Mobile overrides */
         @media (max-width: 767px) {
-            /* Keep blur but slightly darker background */
             .navbar {
-                left: 5%;
-                transform: none;
-                /* Allow dropdown to extend below the navbar */
-                overflow: visible;
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                align-items: center;
             }
 
             /* Swap logos */
@@ -112,11 +110,10 @@
             /* Keep CTA visible on mobile */
             /* Center the mobile CTA horizontally & vertically inside the navbar */
             .navbar-cta.mobile-only {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 1001; /* above blur layer */
+                position: static;
+                transform: none;
+                justify-self: center;
+                margin: 0;
             }
 
             /* Center dropdown items */
