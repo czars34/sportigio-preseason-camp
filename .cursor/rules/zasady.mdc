@@ -8,10 +8,7 @@ Zasady dla tego projektu:
 - kolor dodatkowy: #0B2360
 - kolory tekstu: preferuj biały lub czarny
 - pracujemy w jednym pliku index.html - nie rozdzielamy JS,CSS od HTML
-- różne wersje logotypu mojej firmy są w głównym katalogu projektu
+- różne wersje logotypu firmy są w katalogu /assets
 - strona musi być responsywna, podejście mobile-first
 - jesli dodajesz ikony: korzystaj z font awesome
-
-
-
 - nie uzywamy żadnego emoji na stronie, preferuj ikony z font awesome
