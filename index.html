@@ -94,6 +94,7 @@
                 display: grid;
                 grid-template-columns: auto 1fr auto;
                 align-items: center;
+                overflow: visible; /* was hidden – clipped menu */
             }
 
             /* Swap logos */
@@ -123,13 +124,14 @@
                 text-align: center;
             }
 
-            /* Hero minor tweaks for very small screens */
-            #sg-preseason-camp .hero {
-                padding-top: 6rem;
-            }
+         
             /* Hide desktop CTA on mobile */
             #sg-preseason-camp .desktop-only {
                 display: none !important;
+            }
+            /* Extra offset equal nav height */
+            #sg-preseason-camp .hero-content {
+                margin-top: 2rem; /* pushes badge safely below navbar */
             }
         }
 
