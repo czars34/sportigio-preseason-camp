@@ -1314,6 +1314,65 @@
     max-width: 100%;            /* nigdy > viewport */
   }
 }
+/* ===== Hero badge ===== */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-badge-logo {
+    height: 0.9rem;
+    width: auto;
+}
+
+.hero-badge span {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+    .hero-badge {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .hero-badge-logo {
+        height: 1rem;
+    }
+    
+    .hero-badge span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-badge {
+        padding: 0.6rem 1.2rem;
+        gap: 0.5rem;
+    }
+    
+    .hero-badge-logo {
+        height: 1.1rem;
+    }
+    
+    .hero-badge span {
+        font-size: 0.85rem;
+    }
+}
+
 /* ===== 3 fixed lines in hero ===== */
 .hero-heading {
   /* płynny rozmiar – rośnie z ekranem, ale ma widełki */
@@ -1362,6 +1421,10 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
+                <div class="hero-badge">
+                    <img src="/assets/sportigio-poziom-white.png" alt="Sportigio" class="hero-badge-logo">
+                    <span>PreSeason Camp 2025</span>
+                </div>
                 <h1 class="hero-heading">
                     <span>Wejdź w nowy sezon z głową.</span>
                     <span>Prosto i praktycznie.</span>
