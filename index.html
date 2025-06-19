@@ -160,7 +160,6 @@
             background-color: white;
             color: #0B2360 !important;
             font-family: 'Poppins', sans-serif;
-            /* Responsive sizing now handled once with clamp() */
             font-size: clamp(0.8rem, 0.72rem + 0.2vw, 0.9rem);
             font-weight: 700;
             padding: 0.4rem 1rem;
@@ -178,7 +177,6 @@
             transform: translateY(-1px);
         }
 
-        /* Mobile menu button */
         .mobile-menu-btn {
             display: block;
             background: none;
@@ -281,24 +279,7 @@
             text-align: center;
         }
 
-        .hero h1 {
-            /* Responsive sizing now handled once with clamp() */
-            font-size: clamp(1.4rem, 1.05rem + 2vw, 2.8rem);
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            color: white;
-            line-height: 1.2;
-        }
 
-        .hero p {
-            /* Responsive sizing now handled once with clamp() */
-            font-size: clamp(1rem, 0.85rem + 1vw, 1.4rem);
-            font-weight: 400;
-            margin-bottom: 2rem;
-            color: white;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
 
         .hero-image {
             display: flex;
@@ -340,22 +321,7 @@
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
         }
 
-        /* Smaller CTA button just for hero */
-        .hero .cta-button {
-            /* Responsive sizing now handled once with clamp() */
-            font-size: clamp(0.9rem, 0.9rem + 0.3vw, 1.2rem);
-            padding: 0.7rem 1.6rem;
-        }
-        @media (min-width: 768px) {
-            .hero .cta-button {
-                padding: 1rem 2.3rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .hero .cta-button {
-                padding: 1.1rem 2.6rem;
-            }
-        }
+
 
         /* Tablet styles */
         @media (min-width: 768px) {
@@ -1224,11 +1190,11 @@
         .final-cta-section .cta-button {
             display: inline-block;
             background-color: #00c853;
-            color: #0B2360;
+            color: white;
             font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
+            font-size: clamp(1.15rem, 1rem + 1vw, 1.6rem) !important;
             font-weight: 700;
-            padding: 0.9rem 2rem;
+            padding: 1.1rem 2.6rem !important;
             border: none;
             border-radius: 50px;
             text-decoration: none;
@@ -1373,27 +1339,84 @@
     }
 }
 
-/* ===== 3 fixed lines in hero ===== */
-.hero-heading {
-  /* płynny rozmiar – rośnie z ekranem, ale ma widełki */
-  font-size: clamp(1.1rem, 3.5vw + .5rem, 2.8rem);
-  line-height: 1.22;
+/* ===== New hero structure ===== */
+.hero-main-title {
+  font-size: clamp(1.6rem, 4vw + .8rem, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 1rem;
 }
 
-/* każdy span to osobny wiersz */
-.hero-heading span { 
-  display: block;          /* twardy enter */
-  white-space: nowrap;     /* i zero łamań w środku */
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw + .5rem, 1.4rem);
+  font-weight: 400;
+  color: white;
+  opacity: 0.95;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
-/* gdy ekran jest ekstremalnie wąski (≤ 320-340 px) – jeszcze zbijamy czcionkę,
-   żeby najdłuższa linia nie wystawała */
-@media (max-width: 360px) {
-  .hero-heading {
-    font-size: clamp(.95rem, 6vw + .3rem, 1.4rem);
+.hero-details {
+  margin-bottom: 2rem;
+}
+
+.hero-detail-item {
+  font-size: clamp(0.85rem, 1.5vw + .3rem, 1.1rem);
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.hero-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.cta-green {
+  background-color: #00c853 !important;
+  color: white !important;
+  font-size: clamp(0.9rem, 0.75rem + 1.5vw, 1.2rem) !important;
+  padding: 0.7rem 1.4rem !important;
+}
+
+.cta-green:hover {
+  background-color: #00d65f !important;
+  color: white !important;
+}
+
+.hero-detail-item i {
+  margin-right: 0.4rem;
+  color: white;
+}
+
+.countdown-label {
+  font-size: clamp(0.8rem, 1.3vw + .2rem, 1rem);
+  color: white;
+  opacity: 0.9;
+  margin-top: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.countdown-label i {
+  margin-right: 0.4rem;
+  color: white;
+}
+
+.countdown-timer {
+  font-size: clamp(1.3rem, 3vw + .8rem, 2rem);
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* Bigger CTA on mobile */
+@media (max-width: 767px) {
+  .cta-green {
+    font-size: clamp(1rem, 0.85rem + 2vw, 1.3rem) !important;
+    padding: 0.8rem 1.6rem !important;
   }
 }
-
 
     </style>
 </head>
@@ -1414,7 +1437,6 @@
             <li><a href="#faq">FAQ</a></li>
         </ul>
         <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta desktop-only">Zapisz się</a>
-        <!-- Hamburger / close icon now uses Font Awesome -->
         <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
     </nav>
 
@@ -1425,13 +1447,16 @@
                     <img src="/assets/sportigio-poziom-white.png" alt="Sportigio" class="hero-badge-logo">
                     <span>PreSeason Camp 2025</span>
                 </div>
-                <h1 class="hero-heading">
-                    <span>Wejdź w nowy sezon z głową.</span>
-                    <span>Prosto i praktycznie.</span>
-                    <span>Na Twoich warunkach.</span>
-                  </h1>                  
-                <p>Bezpłatny cykl webinarów i zadań, dzięki którym przygotujesz stronę klubu, włączysz sklep, dodasz bilety i przyciągniesz kibiców oraz sponsorów – nawet jeśli Twoja znajomość IT kończy się na Facebooku.</p>
-                <a href="https://forms.sportigio.com/preseason-camp" class="cta-button">Zapisz się bezpłatnie i zacznij działać</a>
+                <h1 class="hero-main-title">Bezpłatny program <br>dla klubów sportowych</h1>
+                <p class="hero-subtitle">Przygotuj klub do sezonu z narzędziami online, oszczędzaj czas i zwiększ przychody</p>
+                <div class="hero-details">
+                    <div class="hero-detail-item"><i class="fas fa-calendar-alt"></i> Start: <strong>30 czerwca | godz. 17:00 </strong>(Live 1,5h)</div>
+                    <div class="hero-detail-item"><i class="fas fa-hourglass-half"></i> Dostęp: 30.06 - 03.08.2025 (4 tygodnie tematyczne)</div>
+                    <div class="hero-detail-item"><i class="fas fa-user"></i> Gotowe instrukcje i materiały do samodzielnego wdrożenia</div>
+                </div>
+                <a href="https://forms.sportigio.com/preseason-camp" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</a>
+                <p class="countdown-label"> Do startu pozostało:</p>
+                <div id="countdown" class="countdown-timer">-- dni -- godzin -- minut</div>
             </div>
             <div class="hero-image">
                 <img src="/assets/Zrzut ekranu 2025-06-14 184815.png" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
@@ -1758,6 +1783,30 @@
         
         // Set active card on page load
         setActiveScheduleCard();
+
+        // ===== Countdown timer to 30 June 2025 17:00 =====
+        const countdownEl = document.getElementById('countdown');
+        const targetDate = new Date(2025, 5, 30, 17, 0, 0); // months 0-indexed
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                countdownEl.textContent = '0 dni 00 godzin 00 minut';
+                clearInterval(timerId);
+                return;
+            }
+
+            const minutes = Math.floor(diff / (1000 * 60)) % 60;
+            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            countdownEl.textContent = `${days} dni ${String(hours).padStart(2, '0')} godzin ${String(minutes).padStart(2, '0')} minut`;
+        }
+
+        updateCountdown();
+        const timerId = setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
