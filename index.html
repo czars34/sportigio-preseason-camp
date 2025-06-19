@@ -481,6 +481,13 @@
                 font-size: 2rem;
                 color: white;
             }
+            .feature h3 {
+                font-size: 1.35rem;
+                font-weight: 600;
+                margin: 1rem 0 1rem;
+                color: white;
+                text-align: center;
+            }
         }
 
         /* Desktop styles for about section */
@@ -515,6 +522,9 @@
                 margin-bottom: 2rem;
                 color: white;
             }
+            .feature h3 {
+                font-size: 1.55rem;
+            }
         }
 
         .webinar-section {
@@ -545,12 +555,12 @@
         .webinar-date {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 0.5rem;
             font-size: 1rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
-            text-align: center;
+            text-align: left;
         }
         /* Desktop: keep icon and text in one line */
         @media (min-width: 768px) {
@@ -842,6 +852,11 @@
             .card-description {
                 font-size: 1rem;
             }
+
+            /* Equalise card height on tablet */
+            .schedule-card {
+                min-height: 340px;
+            }
         }
 
         /* Desktop styles for schedule */
@@ -855,15 +870,20 @@
                 margin-bottom: 4rem;
             }
 
+            /* Switch to flex so the last 2 cards are centred under the first 3 */
             .schedule-cards {
-                grid-template-columns: repeat(3, 1fr);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 2rem;
             }
 
             .schedule-card {
                 padding: 2.5rem;
+                flex: 0 1 calc(33.333% - 2rem);
+                max-width: calc(33.333% - 2rem);
             }
-
+            
             .card-icon {
                 width: 70px;
                 height: 70px;
@@ -878,6 +898,16 @@
                 font-size: 1.1rem;
                 margin-top: 1rem;
             }
+
+            /* Equalise card height on desktop - a bit taller */
+            .schedule-card {
+                min-height: 320px;
+            }
+        }
+
+        /* Prevent long date ranges breaking into two lines */
+        .card-date {
+            white-space: nowrap;
         }
 
         /* Benefits Section */
@@ -1466,26 +1496,29 @@
 
     <section class="about-section">
         <div class="container">
-            <h2>Czym jest PreSeason Camp?</h2>
-            <p class="intro">Praktyczne przygotowanie klubu na nowy sezon.</p>
+            <h2>Czym jest <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="/assets/sportigio-poziom-navy.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp?</h2>
+            <p class="intro">Praktyczny program, dzięki któremu uruchomisz stronę swojego klubu w kilka dni</p>
             <div class="features">
                 <div class="feature">
                     <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <p>Zamiast nudnej teorii – co tydzień dostajesz zadanie, instrukcję i narzędzia.</p>
+                    <h3>Gotowe zadania zamiast teorii</h3>
+                    <p>Co tydzień otrzymujesz konkretne zadania, instrukcję i potrzebne narzędzia</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <p>Masz dostęp do grupy, konsultacji i webinarów.</p>
+                    <h3>Wsparcie ekspertów i społeczności</h3>
+                    <p>Masz dostęp do grupy, webinarów oraz konsultacji 1:1. Dostajesz wsparcie merytoryczne i techniczne, kiedy tylko go potrzebujesz.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <p>Robisz to w godzinę tygodniowo lub kiedy chcesz.</p>
+                    <h3>Wszystko dostępne 24/7</h3>
+                    <p>Nie musisz być na żywo – dostajesz wszystkie nagrania i materiały. Możesz działać w swoim tempie i o dowolnej porze.</p>
                 </div>
             </div>
         </div>
@@ -1493,7 +1526,7 @@
 
     <section class="webinar-section">
         <div class="container">
-            <h2><i class="fas fa-play-circle"></i> Start: Webinar otwierający – 23 czerwca</h2>
+            <h2><i class="fas fa-play-circle"></i> Start: Webinar otwierający – 30 czerwca</h2>
             <!-- NEW layout wrapper -->
             <div class="webinar-layout">
                 <div class="webinar-image">
@@ -1501,20 +1534,20 @@
                 </div>
                 <div class="webinar-info">
                     <div class="webinar-date">
-                        <span class="webinar-date-text">Termin: 23 czerwca, godz. XX:XX (lub: dostępne nagranie)</span>
+                        <span><strong>Termin: 30 czerwca, godz. 17:00</strong></span>
                     </div>
                     <div class="webinar-topics">
-                        <h3>Tematy:</h3>
+                        <h3>W programie webinaru:</h3>
                         <ul>
-                            <li>Nowości w Sportigio 2025</li>
-                            <li>Jak działa darmowy plan</li>
-                            <li>Jak zacząć od strony, aplikacji i prostych narzędzi</li>
-                            <li>Pokaz kreatora strony w 5 minut</li>
-                            <li>Przykłady klubów i Q&amp;A</li>
+                            <li>Co nowego w Sportigio w sezonie 2025/26</li>
+                            <li>Jak działa darmowy plan i co dokładnie oferuje</li>
+                            <li>Od czego zacząć – krok po kroku</li>
+                            <li>Pokaz kreatora strony: zbuduj demo w 5 minut</li>
+                            <li>Przykłady stron klubów i Q&amp;A</li>
                         </ul>
                     </div>
                     <div class="webinar-cta-row">
-                        <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-file-pdf"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
+                        <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
                     </div>
                 </div><!-- /.webinar-info -->
             </div><!-- /.webinar-layout -->
@@ -1523,7 +1556,7 @@
 
     <section class="schedule-section" id="terminy">
         <div class="container">
-            <h2>Terminy i tematy tygodni</h2>
+            <h2>Terminy i tematy tygodnia</h2>
             <div class="schedule-cards">
                 <div class="schedule-card" data-week="1">
                     <div class="card-header">
@@ -1531,27 +1564,14 @@
                             <i class="fas fa-globe"></i>
                         </div>
                         <div>
-                            <div class="card-date">23–29 czerwca</div>
+                            <div class="card-date">30 czerwca - 5 lipca</div>
                             <h3 class="card-title">Strona internetowa</h3>
                         </div>
                     </div>
-                    <p class="card-description">Wybierzesz szablon, wrzucisz treści, uruchomisz automatyczne wyniki</p>
+                    <p class="card-description">Wybierzesz szablon, dodasz treści, uruchomisz automatyczne wyniki.</p>
                 </div>
 
                 <div class="schedule-card" data-week="2">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
-                        <div>
-                            <div class="card-date">30.06–5 lipca</div>
-                            <h3 class="card-title">[EN] Website creation</h3>
-                        </div>
-                    </div>
-                    <p class="card-description">English version – for international clubs</p>
-                </div>
-
-                <div class="schedule-card" data-week="3">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-ticket-alt"></i>
@@ -1561,10 +1581,10 @@
                             <h3 class="card-title">Bilety i karnety</h3>
                         </div>
                     </div>
-                    <p class="card-description">Wstawisz bilety, podłączysz płatności</p>
+                    <p class="card-description">Wstawisz wydarzenie i bilety na mecze, zaczniesz sprzedawać w kilka minut.</p>
                 </div>
 
-                <div class="schedule-card" data-week="4">
+                <div class="schedule-card" data-week="3">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -1574,10 +1594,10 @@
                             <h3 class="card-title">Sklep bez magazynu</h3>
                         </div>
                     </div>
-                    <p class="card-description">Stworzysz produkty merchu, z integracją z drukarnią</p>
+                    <p class="card-description">Stworzysz gadżety i zaczniesz sprzedaż bez ryzyka.</p>
                 </div>
 
-                <div class="schedule-card" data-week="5">
+                <div class="schedule-card" data-week="4">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-heart"></i>
@@ -1587,20 +1607,20 @@
                             <h3 class="card-title">Fan Engagement</h3>
                         </div>
                     </div>
-                    <p class="card-description">Włączysz rankingi, quizy i punkty za wsparcie</p>
+                    <p class="card-description">Dodasz quizy i aktywności dla kibiców.</p>
                 </div>
 
-                <div class="schedule-card" data-week="6">
+                <div class="schedule-card" data-week="5">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-crown"></i>
                         </div>
                         <div>
-                            <div class="card-date">28.07–3 sierpnia</div>
+                            <div class="card-date">28 lipca –3 sierpnia</div>
                             <h3 class="card-title">Strefa Biznes i VIP</h3>
                         </div>
                     </div>
-                    <p class="card-description">Dodasz pakiety sponsorskie i obsługę VIP'ów</p>
+                    <p class="card-description">Zbudujesz sekcję dla sponsorów: oferty, logotypy, pakiety.</p>
                 </div>
             </div>
         </div>
@@ -1751,9 +1771,8 @@
             const scheduleCards = document.querySelectorAll('.schedule-card');
             const today = new Date();
             
-            // Define start dates for each week (2025)
+            // Define start dates for each week (2025) – aligned with 5 schedule cards
             const weekStartDates = [
-                new Date(2025, 5, 23), // 23 czerwca (month is 0-indexed)
                 new Date(2025, 5, 30), // 30 czerwca
                 new Date(2025, 6, 7),  // 7 lipca
                 new Date(2025, 6, 14), // 14 lipca
@@ -1788,10 +1807,21 @@
         const countdownEl = document.getElementById('countdown');
         const targetDate = new Date(2025, 5, 30, 17, 0, 0); // months 0-indexed
 
+        // Zwraca właściwą odmianę rzeczownika w zależności od liczby
+        function pluralizePL(n, one, few, many) {
+            const v = Math.abs(n);
+            if (v % 10 === 1 && v % 100 !== 11) return one;      // 1, 21, 31...
+            if ([2, 3, 4].includes(v % 10) && ![12, 13, 14].includes(v % 100)) {
+                return few;                                      // 2-4, 22-24, 32-34...
+            }
+            return many;                                          // 0, 5-20, 11-14, 25-30...
+        }
+
         function updateCountdown() {
             const now = new Date();
             const diff = targetDate - now;
 
+            // Jeśli czas minął – pokaż zera i zatrzymaj licznik
             if (diff <= 0) {
                 countdownEl.textContent = '0 dni 00 godzin 00 minut';
                 clearInterval(timerId);
@@ -1799,10 +1829,14 @@
             }
 
             const minutes = Math.floor(diff / (1000 * 60)) % 60;
-            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours   = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-            countdownEl.textContent = `${days} dni ${String(hours).padStart(2, '0')} godzin ${String(minutes).padStart(2, '0')} minut`;
+            const dayWord    = pluralizePL(days,    'dzień',   'dni',    'dni');
+            const hourWord   = pluralizePL(hours,   'godzina', 'godziny','godzin');
+            const minuteWord = pluralizePL(minutes, 'minuta',  'minuty', 'minut');
+
+            countdownEl.textContent = `${days} ${dayWord} ${String(hours).padStart(2, '0')} ${hourWord} ${String(minutes).padStart(2, '0')} ${minuteWord}`;
         }
 
         updateCountdown();
