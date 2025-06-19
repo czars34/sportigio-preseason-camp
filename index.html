@@ -7,26 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
+
+        #sg-preseason-camp * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
+        #sg-preseason-camp html {
             scroll-behavior: smooth;
         }
 
-        body {
+        body { margin: 0; }
+
+        #sg-preseason-camp {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: white;
-            background: linear-gradient(135deg, #0B2360 0%, #01DFEC 100%);
-            min-height: 100vh;
         }
 
         /* Navbar styles */
-        .navbar {
+        #sg-preseason-camp .navbar {
             position: fixed;
             top: 1rem;
             left: 50%;
@@ -43,7 +44,7 @@
             overflow: hidden;
         }
 
-        .navbar::before {
+        #sg-preseason-camp .navbar::before {
             content: '';
             position: absolute;
             top: 0;
@@ -58,58 +59,58 @@
             z-index: -1;
         }
 
-        .navbar-logo {
+        #sg-preseason-camp .navbar-logo {
             display: flex;
             align-items: center;
         }
 
-        .navbar-logo a {
+        #sg-preseason-camp .navbar-logo a {
             display: flex;
             align-items: center;
         }
 
-        .navbar-logo img {
+        #sg-preseason-camp .navbar-logo img {
             height: 20px;
             width: auto;
         }
 
         /* Hide/show proper logo versions */
-        .navbar-logo .logo-sygnet {
+        #sg-preseason-camp .navbar-logo .logo-sygnet {
             display: none;
         }
 
         /* Utility classes to control visibility per breakpoint */
-        .mobile-only {
+        #sg-preseason-camp .mobile-only {
             display: none;
         }
 
-        .desktop-only {
+        #sg-preseason-camp .desktop-only {
             display: inline-block;
         }
 
         /* Mobile overrides */
         @media (max-width: 767px) {
-            .navbar {
+            #sg-preseason-camp .navbar {
                 display: grid;
                 grid-template-columns: auto 1fr auto;
                 align-items: center;
             }
 
             /* Swap logos */
-            .navbar-logo .logo-full {
+            #sg-preseason-camp .navbar-logo .logo-full {
                 display: none;
             }
-            .navbar-logo .logo-sygnet {
+            #sg-preseason-camp .navbar-logo .logo-sygnet {
                 display: block;
             }
 
             /* Show / hide helpers */
-            .mobile-only {
+            #sg-preseason-camp .mobile-only {
                 display: block;
             }
             /* Keep CTA visible on mobile */
             /* Center the mobile CTA horizontally & vertically inside the navbar */
-            .navbar-cta.mobile-only {
+            #sg-preseason-camp .navbar-cta.mobile-only {
                 position: static;
                 transform: none;
                 justify-self: center;
@@ -117,22 +118,22 @@
             }
 
             /* Center dropdown items */
-            .navbar-nav.active {
+            #sg-preseason-camp .navbar-nav.active {
                 align-items: center;
                 text-align: center;
             }
 
             /* Hero minor tweaks for very small screens */
-            .hero {
+            #sg-preseason-camp .hero {
                 padding-top: 6rem;
             }
             /* Hide desktop CTA on mobile */
-            .desktop-only {
+            #sg-preseason-camp .desktop-only {
                 display: none !important;
             }
         }
 
-        .navbar-nav {
+        #sg-preseason-camp .navbar-nav {
             display: none;
             list-style: none;
             margin: 0;
@@ -140,11 +141,11 @@
             gap: 1.5rem;
         }
 
-        .navbar-nav li {
+        #sg-preseason-camp .navbar-nav li {
             margin: 0;
         }
 
-        .navbar-nav a {
+        #sg-preseason-camp .navbar-nav a {
             color: white;
             text-decoration: none;
             font-weight: 500;
@@ -152,11 +153,11 @@
             transition: color 0.3s ease;
         }
 
-        .navbar-nav a:hover {
+        #sg-preseason-camp .navbar-nav a:hover {
             color: #01DFEC;
         }
 
-        .navbar-cta {
+        #sg-preseason-camp .navbar-cta {
             background-color: white;
             color: #0B2360 !important;
             font-family: 'Poppins', sans-serif;
@@ -171,13 +172,13 @@
             white-space: nowrap;
         }
 
-        .navbar-cta:hover {
+        #sg-preseason-camp .navbar-cta:hover {
             background-color: #01DFEC;
             color: #0B2360;
             transform: translateY(-1px);
         }
 
-        .mobile-menu-btn {
+        #sg-preseason-camp .mobile-menu-btn {
             display: block;
             background: none;
             border: none;
@@ -191,7 +192,7 @@
             cursor: pointer;
         }
 
-        .navbar-nav.active {
+        #sg-preseason-camp .navbar-nav.active {
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -210,52 +211,52 @@
 
         /* Tablet styles for navbar */
         @media (min-width: 768px) {
-            .navbar {
+            #sg-preseason-camp .navbar {
                 padding: 0.5rem 1.2rem;
                 width: 85%;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
-            .navbar-logo img {
+            #sg-preseason-camp .navbar-logo img {
                 height: 24px;
             }
 
-            .navbar-nav {
+            #sg-preseason-camp .navbar-nav {
                 display: flex;
             }
 
-            .mobile-menu-btn {
+            #sg-preseason-camp .mobile-menu-btn {
                 display: none;
             }
 
-            .navbar-cta {
+            #sg-preseason-camp .navbar-cta {
                 padding: 0.5rem 1.2rem;
             }
         }
 
         /* Desktop styles for navbar */
         @media (min-width: 1024px) {
-            .navbar {
+            #sg-preseason-camp .navbar {
                 padding: 0.4rem 1.2rem;
                 width: 65%;
                 max-width: 720px;
             }
 
-            .navbar-logo img {
+            #sg-preseason-camp .navbar-logo img {
                 height: 24px;
             }
 
-            .navbar-nav {
+            #sg-preseason-camp .navbar-nav {
                 gap: 1.2rem;
             }
 
-            .navbar-cta {
+            #sg-preseason-camp .navbar-cta {
                 padding: 0.5rem 1rem;
             }
         }
 
-        .hero {
+        #sg-preseason-camp .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -266,7 +267,7 @@
             overflow: hidden;
         }
 
-        .hero-content {
+        #sg-preseason-camp .hero-content {
             max-width: 1400px;
             width: 100%;
             display: grid;
@@ -275,20 +276,20 @@
             align-items: center;
         }
 
-        .hero-text {
+        #sg-preseason-camp .hero-text {
             text-align: center;
         }
 
 
 
-        .hero-image {
+        #sg-preseason-camp .hero-image {
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
 
-        .hero-image img {
+        #sg-preseason-camp .hero-image img {
             max-width: 100%;
             height: auto;
             border-radius: 20px;
@@ -296,7 +297,7 @@
             border: 3px solid rgba(255, 255, 255, 0.2);
         }
 
-        .cta-button {
+        #sg-preseason-camp .cta-button {
             display: inline-block;
             background-color: white;
             color: black;
@@ -314,7 +315,7 @@
             white-space: nowrap;
         }
 
-        .cta-button:hover {
+        #sg-preseason-camp .cta-button:hover {
             background-color: #f8f9fa;
             color: black;
             transform: translateY(-2px);
@@ -325,32 +326,32 @@
 
         /* Tablet styles */
         @media (min-width: 768px) {
-            .hero {
+            #sg-preseason-camp .hero {
                 padding: 6rem 2rem 3rem;
             }
             
-            .hero-content {
+            #sg-preseason-camp .hero-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 4rem;
             }
             
-            .hero-text {
+            #sg-preseason-camp .hero-text {
                 text-align: left;
             }
         }
 
         /* Desktop styles */
         @media (min-width: 1024px) {
-            .hero {
+            #sg-preseason-camp .hero {
                 padding: 7rem 2rem 4rem;
             }
             
-            .hero-content {
+            #sg-preseason-camp .hero-content {
                 grid-template-columns: 1.2fr 1fr;
                 gap: 5rem;
             }
             
-            .hero-image img {
+            #sg-preseason-camp .hero-image img {
                 max-width: 120%;
             }
         }
@@ -358,50 +359,50 @@
         /* MacBook / medium-large laptop optimisation */
         @media (min-width: 1024px) and (max-width: 1439px) {
             /* Navbar narrower for compact look */
-            .navbar {
+            #sg-preseason-camp .navbar {
                 width: 65%;
             }
             /* Image stays inside its column with more right margin */
-            .hero-image img {
+            #sg-preseason-camp .hero-image img {
                 max-width: 95%;
                 margin-right: 2rem;
             }
         }
 
         /* About section */
-        .about-section {
+        #sg-preseason-camp .about-section {
             background-color: white;
             color: #0B2360;
             padding: 4rem 1rem;
         }
 
-        .container {
+        #sg-preseason-camp .container {
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-section h2 {
+        #sg-preseason-camp .about-section h2 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: #0B2360;
         }
 
-        .intro {
+        #sg-preseason-camp .intro {
             font-size: 1.3rem;
             font-weight: 600;
             color: #0B2360;
             margin-bottom: 3rem;
         }
 
-        .features {
+        #sg-preseason-camp .features {
             display: grid;
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .feature {
+        #sg-preseason-camp .feature {
             background: linear-gradient(135deg, #0B2360 0%, #1a3a7a 100%);
             color: white;
             padding: 2.5rem 2rem;
@@ -412,7 +413,7 @@
             overflow: hidden;
         }
 
-        .feature::before {
+        #sg-preseason-camp .feature::before {
             content: '';
             position: absolute;
             top: 0;
@@ -422,12 +423,12 @@
             background: linear-gradient(90deg, #01DFEC 0%, #00c4d1 100%);
         }
 
-        .feature:hover {
+        #sg-preseason-camp .feature:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(11, 35, 96, 0.3);
         }
 
-        .feature-icon {
+        #sg-preseason-camp .feature-icon {
             width: 60px;
             height: 60px;
             background: rgba(1, 223, 236, 0.2);
@@ -440,7 +441,7 @@
             color: white;
         }
 
-        .feature p {
+        #sg-preseason-camp .feature p {
             /* Responsive sizing now handled once with clamp() */
             font-size: clamp(1.1rem, 0.95rem + 0.3vw, 1.2rem);
             font-weight: 500;
@@ -452,36 +453,36 @@
 
         /* Tablet styles for about section */
         @media (min-width: 768px) {
-            .about-section {
+            #sg-preseason-camp .about-section {
                 padding: 5rem 2rem;
             }
             
-            .about-section h2 {
+            #sg-preseason-camp .about-section h2 {
                 font-size: 2.5rem;
                 margin-bottom: 2rem;
             }
             
-            .intro {
+            #sg-preseason-camp .intro {
                 font-size: 1.4rem;
                 margin-bottom: 3.5rem;
             }
             
-            .features {
+            #sg-preseason-camp .features {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
             
-            .feature {
+            #sg-preseason-camp .feature {
                 padding: 3rem 2.5rem;
             }
             
-            .feature-icon {
+            #sg-preseason-camp .feature-icon {
                 width: 70px;
                 height: 70px;
                 font-size: 2rem;
                 color: white;
             }
-            .feature h3 {
+            #sg-preseason-camp .feature h3 {
                 font-size: 1.35rem;
                 font-weight: 600;
                 margin: 1rem 0 1rem;
@@ -492,52 +493,52 @@
 
         /* Desktop styles for about section */
         @media (min-width: 1024px) {
-            .about-section {
+            #sg-preseason-camp .about-section {
                 padding: 6rem 2rem;
             }
             
-            .about-section h2 {
+            #sg-preseason-camp .about-section h2 {
                 font-size: 3rem;
                 margin-bottom: 2.5rem;
             }
             
-            .intro {
+            #sg-preseason-camp .intro {
                 font-size: 1.5rem;
                 margin-bottom: 4rem;
             }
             
-            .features {
+            #sg-preseason-camp .features {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 3rem;
             }
             
-            .feature {
+            #sg-preseason-camp .feature {
                 padding: 3.5rem 3rem;
             }
             
-            .feature-icon {
+            #sg-preseason-camp .feature-icon {
                 width: 80px;
                 height: 80px;
                 font-size: 2.2rem;
                 margin-bottom: 2rem;
                 color: white;
             }
-            .feature h3 {
+            #sg-preseason-camp .feature h3 {
                 font-size: 1.55rem;
             }
         }
 
-        .webinar-section {
+        #sg-preseason-camp .webinar-section {
             background: #fff;
             color: #111;
             padding: 3rem 1rem 2.5rem;
         }
-        .webinar-section .container {
+        #sg-preseason-camp .webinar-section .container {
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
-        .webinar-section h2 {
+        #sg-preseason-camp .webinar-section h2 {
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -549,10 +550,10 @@
             flex-wrap: wrap;
             text-align: center;
         }
-        .webinar-section h2 i {
+        #sg-preseason-camp .webinar-section h2 i {
             display: none;
         }
-        .webinar-date {
+        #sg-preseason-camp .webinar-date {
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -564,20 +565,20 @@
         }
         /* Desktop: keep icon and text in one line */
         @media (min-width: 768px) {
-            .webinar-date {
+            #sg-preseason-camp .webinar-date {
                 flex-wrap: nowrap;
                 white-space: nowrap;
             }
-            .webinar-icon {
+            #sg-preseason-camp .webinar-icon {
                 display: inline-block; /* show on desktop */
             }
         }
-        .webinar-icon {
+        #sg-preseason-camp .webinar-icon {
             color: #0B2360;
             font-size: 1.1rem;
             display: none; /* hidden on mobile */
         }
-        .webinar-topics h3 {
+        #sg-preseason-camp .webinar-topics h3 {
             font-size: 1.2rem;
             font-weight: 600;
             color: #0B2360;
@@ -587,20 +588,20 @@
             gap: 0.5rem;
             justify-content: center;
         }
-        .webinar-topics ul {
+        #sg-preseason-camp .webinar-topics ul {
             list-style: none;
             padding: 0;
             margin: 0 auto 2rem auto;
             max-width: 400px;
             text-align: left;
         }
-        .webinar-topics ul li {
+        #sg-preseason-camp .webinar-topics ul li {
             font-size: 1.05rem;
             margin-bottom: 0.7rem;
             padding-left: 2rem;
             position: relative;
         }
-        .webinar-topics ul li::before {
+        #sg-preseason-camp .webinar-topics ul li::before {
             content: '\f058';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
@@ -610,10 +611,10 @@
             top: 0.1rem;
             font-size: 1rem;
         }
-        .webinar-cta-row {
+        #sg-preseason-camp .webinar-cta-row {
             margin-top: 2.5rem;
         }
-        .webinar-cta {
+        #sg-preseason-camp .webinar-cta {
             display: inline-block;
             background: #0B2360;
             color: #fff;
@@ -628,86 +629,86 @@
             text-align: center;
             line-height: 1.3;
         }
-        .webinar-cta i {
+        #sg-preseason-camp .webinar-cta i {
             margin-right: 0.7rem;
         }
-        .webinar-cta:hover {
+        #sg-preseason-camp .webinar-cta:hover {
             background: #01DFEC;
             color: #0B2360;
             transform: translateY(-2px);
         }
         @media (min-width: 768px) {
-            .webinar-section {
+            #sg-preseason-camp .webinar-section {
                 padding: 5rem 2rem 4rem;
             }
-            .webinar-section h2 {
+            #sg-preseason-camp .webinar-section h2 {
                 font-size: 2.3rem;
             }
-            .webinar-section h2 i {
+            #sg-preseason-camp .webinar-section h2 i {
                 display: inline;
             }
             /* calendar icon already visible by default */
-            .webinar-topics ul {
+            #sg-preseason-camp .webinar-topics ul {
                 font-size: 1.1rem;
             }
             /* slightly bigger CTA on desktop but still smaller than before */
-            .webinar-cta {
+            #sg-preseason-camp .webinar-cta {
                 font-size: 1rem;
                 padding: 0.9rem 2rem;
             }
         }
         @media (min-width: 1024px) {
-            .webinar-section {
+            #sg-preseason-camp .webinar-section {
                 padding: 6rem 2rem 5rem;
             }
-            .webinar-section h2 {
+            #sg-preseason-camp .webinar-section h2 {
                 font-size: 2.7rem;
             }
-            .webinar-topics ul {
+            #sg-preseason-camp .webinar-topics ul {
                 max-width: 525px;
             }
         }
 
         /* NEW ─ Webinar layout with image */
-        .webinar-layout {
+        #sg-preseason-camp .webinar-layout {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.8rem;
             margin-top: 1.5rem;
         }
-        .webinar-image img {
+        #sg-preseason-camp .webinar-image img {
             width: 100%;
             max-width: 450px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(11, 35, 96, 0.15);
         }
-        .webinar-info {
+        #sg-preseason-camp .webinar-info {
             width: 100%;
         }
         @media (min-width: 768px) {
-            .webinar-layout {
+            #sg-preseason-camp .webinar-layout {
                 flex-direction: row;
                 align-items: flex-start;
                 text-align: left;
             }
-            .webinar-image,
-            .webinar-info {
+            #sg-preseason-camp .webinar-image,
+            #sg-preseason-camp .webinar-info {
                 flex: 1;
             }
-            .webinar-info {
+            #sg-preseason-camp .webinar-info {
                 padding-left: 2rem;
             }
         }
 
         /* Schedule Section */
-        .schedule-section {
+        #sg-preseason-camp .schedule-section {
             background: linear-gradient(135deg, #0B2360 0%, #1a3a7a 100%);
             color: white;
             padding: 4rem 1rem;
         }
 
-        .schedule-section h2 {
+        #sg-preseason-camp .schedule-section h2 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 2rem;
@@ -715,7 +716,7 @@
             color: white;
         }
 
-        .schedule-cards {
+        #sg-preseason-camp .schedule-cards {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -724,7 +725,7 @@
             grid-auto-rows: 1fr;
         }
 
-        .schedule-card {
+        #sg-preseason-camp .schedule-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 1.5rem;
@@ -737,7 +738,7 @@
             flex-direction: column;
         }
 
-        .schedule-card::before {
+        #sg-preseason-camp .schedule-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -748,30 +749,30 @@
             transition: background 0.3s ease;
         }
 
-        .schedule-card:hover {
+        #sg-preseason-camp .schedule-card:hover {
             transform: translateY(-2px);
             border-color: rgba(1, 223, 236, 0.3);
         }
 
-        .schedule-card.active {
+        #sg-preseason-camp .schedule-card.active {
             background: rgba(1, 223, 236, 0.1);
             border-color: #01DFEC;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(1, 223, 236, 0.2);
         }
 
-        .schedule-card.active::before {
+        #sg-preseason-camp .schedule-card.active::before {
             background: linear-gradient(90deg, #01DFEC 0%, #00c4d1 100%);
         }
 
-        .card-header {
+        #sg-preseason-camp .card-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        .card-icon {
+        #sg-preseason-camp .card-icon {
             width: 50px;
             height: 50px;
             background: rgba(1, 223, 236, 0.2);
@@ -784,30 +785,30 @@
             flex-shrink: 0;
         }
 
-        .schedule-card.active .card-icon {
+        #sg-preseason-camp .schedule-card.active .card-icon {
             background: rgba(1, 223, 236, 0.3);
             color: white;
         }
 
-        .card-date {
+        #sg-preseason-camp .card-date {
             font-size: 0.9rem;
             font-weight: 600;
             color: #01DFEC;
             margin-bottom: 0.2rem;
         }
 
-        .schedule-card.active .card-date {
+        #sg-preseason-camp .schedule-card.active .card-date {
             color: white;
         }
 
-        .card-title {
+        #sg-preseason-camp .card-title {
             font-size: 1.1rem;
             font-weight: 700;
             color: white;
             margin: 0;
         }
 
-        .card-description {
+        #sg-preseason-camp .card-description {
             font-size: 0.95rem;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.5;
@@ -815,116 +816,116 @@
             min-height: 3.5em;
         }
 
-        .schedule-card.active .card-description {
+        #sg-preseason-camp .schedule-card.active .card-description {
             color: rgba(255, 255, 255, 0.95);
         }
 
         /* Tablet styles for schedule */
         @media (min-width: 768px) {
-            .schedule-section {
+            #sg-preseason-camp .schedule-section {
                 padding: 5rem 2rem;
             }
 
-            .schedule-section h2 {
+            #sg-preseason-camp .schedule-section h2 {
                 font-size: 2.5rem;
                 margin-bottom: 3rem;
             }
 
-            .schedule-cards {
+            #sg-preseason-camp .schedule-cards {
                 grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
             }
 
-            .schedule-card {
+            #sg-preseason-camp .schedule-card {
                 padding: 2rem;
             }
 
-            .card-icon {
+            #sg-preseason-camp .card-icon {
                 width: 60px;
                 height: 60px;
                 font-size: 1.8rem;
             }
 
-            .card-title {
+            #sg-preseason-camp .card-title {
                 font-size: 1.2rem;
             }
 
-            .card-description {
+            #sg-preseason-camp .card-description {
                 font-size: 1rem;
             }
 
             /* Equalise card height on tablet */
-            .schedule-card {
+            #sg-preseason-camp .schedule-card {
                 min-height: 340px;
             }
         }
 
         /* Desktop styles for schedule */
         @media (min-width: 1024px) {
-            .schedule-section {
+            #sg-preseason-camp .schedule-section {
                 padding: 6rem 2rem;
             }
 
-            .schedule-section h2 {
+            #sg-preseason-camp .schedule-section h2 {
                 font-size: 3rem;
                 margin-bottom: 4rem;
             }
 
             /* Switch to flex so the last 2 cards are centred under the first 3 */
-            .schedule-cards {
+            #sg-preseason-camp .schedule-cards {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 2rem;
             }
 
-            .schedule-card {
+            #sg-preseason-camp .schedule-card {
                 padding: 2.5rem;
                 flex: 0 1 calc(33.333% - 2rem);
                 max-width: calc(33.333% - 2rem);
             }
             
-            .card-icon {
+            #sg-preseason-camp .card-icon {
                 width: 70px;
                 height: 70px;
                 font-size: 2rem;
             }
 
-            .card-title {
+            #sg-preseason-camp .card-title {
                 font-size: 1.3rem;
             }
 
-            .card-description {
+            #sg-preseason-camp .card-description {
                 font-size: 1.1rem;
                 margin-top: 1rem;
             }
 
             /* Equalise card height on desktop - a bit taller */
-            .schedule-card {
+            #sg-preseason-camp .schedule-card {
                 min-height: 320px;
             }
         }
 
         /* Prevent long date ranges breaking into two lines */
-        .card-date {
+        #sg-preseason-camp .card-date {
             white-space: nowrap;
         }
 
         /* Benefits Section */
-        .benefits-section {
+        #sg-preseason-camp .benefits-section {
             background: #fff;
             color: #0B2360;
             padding: 3rem 1rem;
             text-align: center;
         }
 
-        .benefits-section h2 {
+        #sg-preseason-camp .benefits-section h2 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 2rem;
         }
 
-        .benefits-grid {
+        #sg-preseason-camp .benefits-grid {
             display: grid;
             gap: 1rem;
             max-width: 900px;
@@ -932,7 +933,7 @@
             text-align: left;
         }
 
-        .benefit-item {
+        #sg-preseason-camp .benefit-item {
             display: flex;
             align-items: flex-start;
             gap: 0.8rem;
@@ -943,19 +944,19 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
-        .benefit-item:hover {
+        #sg-preseason-camp .benefit-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 16px rgba(11, 35, 96, 0.1);
         }
 
-        .benefit-icon {
+        #sg-preseason-camp .benefit-icon {
             font-size: 1.2rem;
             color: #0B2360;
             margin-top: 0.1rem;
             flex-shrink: 0;
         }
 
-        .benefit-item p {
+        #sg-preseason-camp .benefit-item p {
             font-size: 1rem;
             font-weight: 500;
             line-height: 1.4;
@@ -964,13 +965,13 @@
         }
 
         /* Audience Section */
-        .audience-section {
+        #sg-preseason-camp .audience-section {
             background: linear-gradient(135deg, #0B2360 0%, #1a3a7a 100%);
             padding: 4rem 1rem;
             color: white;
         }
 
-        .audience-section h2 {
+        #sg-preseason-camp .audience-section h2 {
             text-align: center;
             font-size: 2rem;
             font-weight: 700;
@@ -978,7 +979,7 @@
             color: white;
         }
 
-        .audience-content {
+        #sg-preseason-camp .audience-content {
             max-width: 600px;
             margin: 0 auto;
             display: flex;
@@ -986,7 +987,7 @@
             gap: 2rem;
         }
 
-        .audience-box {
+        #sg-preseason-camp .audience-box {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 20px;
@@ -995,7 +996,7 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
-        .audience-intro {
+        #sg-preseason-camp .audience-intro {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -1004,19 +1005,19 @@
             gap: 0.7rem;
         }
 
-        .audience-intro i {
+        #sg-preseason-camp .audience-intro i {
             flex-shrink: 0;
             margin-top: 0.2em;
         }
 
-        .audience-section ul {
+        #sg-preseason-camp .audience-section ul {
             list-style: none;
             padding: 0;
             margin: 0;
             text-align: left;
         }
 
-        .audience-section li {
+        #sg-preseason-camp .audience-section li {
             /* Switch to block layout so multiline items align */
             display: block;
             position: relative;
@@ -1024,7 +1025,7 @@
             gap: 0; /* not used in block layout */
         }
 
-        .audience-section li i {
+        #sg-preseason-camp .audience-section li i {
             position: absolute;
             left: 0;
             top: 0.25rem;
@@ -1032,67 +1033,67 @@
 
         /* Fine-tune spacing just for mobile */
         @media (max-width: 767px) {
-            .audience-section li {
+            #sg-preseason-camp .audience-section li {
                 gap: 0.6rem;
             }
-            .audience-section li i {
+            #sg-preseason-camp .audience-section li i {
                 width: 1em; /* narrower so text starts bliżej */
                 margin-top: 0.2rem;
             }
-            .audience-intro {
+            #sg-preseason-camp .audience-intro {
                 align-items: center; /* rocket vertically centered */
             }
-            .audience-intro i {
+            #sg-preseason-camp .audience-intro i {
                 margin-top: 0; /* reset shift */
             }
         }
 
         /* Responsive for benefits and audience */
         @media (min-width: 768px) {
-            .benefits-section, .audience-section {
+            #sg-preseason-camp .benefits-section, #sg-preseason-camp .audience-section {
                 padding: 4rem 2rem;
             }
-            .benefits-section h2, .audience-section h2 {
+            #sg-preseason-camp .benefits-section h2, #sg-preseason-camp .audience-section h2 {
                 font-size: 2.5rem;
             }
-            .benefits-grid {
+            #sg-preseason-camp .benefits-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 1.2rem;
             }
-            .benefit-item {
+            #sg-preseason-camp .benefit-item {
                 padding: 1.2rem;
             }
-            .audience-box {
+            #sg-preseason-camp .audience-box {
                 padding: 2.5rem;
             }
         }
 
         @media (min-width: 1024px) {
-            .audience-section .container {
+            #sg-preseason-camp .audience-section .container {
                 max-width: 1140px;
             }
-            .benefits-section, .audience-section {
+            #sg-preseason-camp .benefits-section, #sg-preseason-camp .audience-section {
                 padding: 5rem 2rem;
             }
-            .benefits-section h2, .audience-section h2 {
+            #sg-preseason-camp .benefits-section h2, #sg-preseason-camp .audience-section h2 {
                 font-size: 3rem;
             }
-            .benefits-grid {
+            #sg-preseason-camp .benefits-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            .benefit-item {
+            #sg-preseason-camp .benefit-item {
                 padding: 1.5rem;
                 align-items: center;
             }
-            .benefit-item p {
+            #sg-preseason-camp .benefit-item p {
                 font-size: 1.1rem;
             }
-            .audience-box {
+            #sg-preseason-camp .audience-box {
                 padding: 3rem;
                 flex: 1;
             }
-            .audience-content {
+            #sg-preseason-camp .audience-content {
                 gap: 3rem;
                 flex-direction: row;
                 max-width: none;
@@ -1100,30 +1101,30 @@
         }
 
         /* FAQ Section */
-        .faq-section {
+        #sg-preseason-camp .faq-section {
             background: #fff;
             color: #0B2360;
             padding: 4rem 1rem;
             text-align: center;
         }
 
-        .faq-section h2 {
+        #sg-preseason-camp .faq-section h2 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 3rem;
         }
 
-        .faq-grid {
+        #sg-preseason-camp .faq-grid {
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
         }
 
-        .faq-item {
+        #sg-preseason-camp .faq-item {
             border-bottom: 1px solid #e0e0e0;
         }
 
-        .faq-question {
+        #sg-preseason-camp .faq-question {
             width: 100%;
             background: none;
             border: none;
@@ -1139,60 +1140,60 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .faq-question span {
+        #sg-preseason-camp .faq-question span {
             padding-right: 1rem;
         }
 
-        .faq-question i {
+        #sg-preseason-camp .faq-question i {
             transition: transform 0.3s ease;
             flex-shrink: 0;
         }
 
-        .faq-answer {
+        #sg-preseason-camp .faq-answer {
             padding-bottom: 1.5rem;
         }
 
         /* Hide answers when details is closed */
-        details:not([open]) .faq-answer {
+        #sg-preseason-camp details:not([open]) .faq-answer {
             display: none;
         }
 
         /* Rotate icon when open */
-        .faq-item[open] .faq-question i {
+        #sg-preseason-camp .faq-item[open] .faq-question i {
             transform: rotate(180deg);
         }
 
         /* Remove default marker for summary */
-        .faq-question::-webkit-details-marker {
+        #sg-preseason-camp .faq-question::-webkit-details-marker {
             display: none;
         }
 
         @media (min-width: 768px) {
-            .faq-section {
+            #sg-preseason-camp .faq-section {
                 padding: 5rem 2rem;
             }
-            .faq-section h2 {
+            #sg-preseason-camp .faq-section h2 {
                 font-size: 2.5rem;
             }
-            .faq-question {
+            #sg-preseason-camp .faq-question {
                 font-size: 1.2rem;
             }
-            .faq-answer p {
+            #sg-preseason-camp .faq-answer p {
                 font-size: 1.1rem;
             }
         }
 
         @media (min-width: 1024px) {
-            .faq-section {
+            #sg-preseason-camp .faq-section {
                 padding: 6rem 2rem;
             }
-            .faq-section h2 {
+            #sg-preseason-camp .faq-section h2 {
                 font-size: 3rem;
             }
         }
 
         /* Final CTA Section */
-        .final-cta-section {
+        #sg-preseason-camp .final-cta-section {
             background: 
                 radial-gradient(circle at -10% 110%, #EA36E1 0%, transparent 40%),
                 radial-gradient(circle at 110% 110%, #01DFEC 0%, transparent 40%),
@@ -1202,13 +1203,13 @@
             text-align: center;
         }
 
-        .final-cta-section h2 {
+        #sg-preseason-camp .final-cta-section h2 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .final-cta-section p {
+        #sg-preseason-camp .final-cta-section p {
             font-size: 1rem;
             margin-bottom: 2rem;
             max-width: 900px;
@@ -1217,7 +1218,7 @@
             opacity: 0.9;
         }
 
-        .final-cta-section .cta-button {
+        #sg-preseason-camp .final-cta-section .cta-button {
             display: inline-block;
             background-color: #00c853;
             color: white;
@@ -1233,12 +1234,12 @@
             text-transform: uppercase;
         }
 
-        .final-cta-section .cta-button:hover {
+        #sg-preseason-camp .final-cta-section .cta-button:hover {
             background-color: #00d65f;
             transform: translateY(-2px);
         }
 
-        .cta-note {
+        #sg-preseason-camp .cta-note {
             font-size: 0.75rem !important; 
             opacity: 0.8;
             margin-top: 1rem;
@@ -1247,33 +1248,33 @@
         }
         
         @media (min-width: 768px) {
-            .final-cta-section {
+            #sg-preseason-camp .final-cta-section {
                 padding: 5rem 2rem;
             }
-            .final-cta-section h2 {
+            #sg-preseason-camp .final-cta-section h2 {
                 font-size: 2.5rem;
             }
-            .final-cta-section p {
+            #sg-preseason-camp .final-cta-section p {
                 font-size: 1.3rem;
                 max-width: 1000px;
             }
-            .final-cta-section .cta-button {
+            #sg-preseason-camp .final-cta-section .cta-button {
                 font-size: 1.2rem;
                 padding: 1rem 2.5rem;
             }
         }
         
         @media (min-width: 1024px) {
-            .final-cta-section {
+            #sg-preseason-camp .final-cta-section {
                 padding: 6rem 2rem;
             }
-            .final-cta-section h2 {
+            #sg-preseason-camp .final-cta-section h2 {
                 font-size: 2.8rem;
             }
         }
 
         @media (min-width: 1440px) {
-            .navbar {
+            #sg-preseason-camp .navbar {
                 width: 65%;
                 max-width: 720px;
             }
@@ -1281,27 +1282,27 @@
         /* ===== Fix hero overflow on mobile  ===== */
 @media (max-width: 767px) {
 
-  .hero {
+  #sg-preseason-camp .hero {
     padding-left: 0.5rem;   /* było 1rem */
     padding-right: 0.5rem;
     overflow:hidden;        
   }
 
 
-  .hero-content {
+  #sg-preseason-camp .hero-content {
     grid-template-columns: minmax(0, 1fr);
     gap: 2rem;              
   }
 
-  .hero-image,
-  .hero-image img {
+  #sg-preseason-camp .hero-image,
+  #sg-preseason-camp .hero-image img {
     width: 100%;
     max-width: 100%;
   }
 }
 /* ===== Fix CTA overflow on mobile  ===== */
 @media (max-width: 767px) {
-  .hero .cta-button {
+  #sg-preseason-camp .hero .cta-button {
     white-space: normal;        /* pozwól zawijanie w 2 linie */
     word-break: break-word;     /* awaryjnie */
     padding: 0.7rem 1rem;       /* węższe boki */
@@ -1311,7 +1312,7 @@
   }
 }
 /* ===== Hero badge ===== */
-.hero-badge {
+#sg-preseason-camp .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -1325,12 +1326,12 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.hero-badge-logo {
+#sg-preseason-camp .hero-badge-logo {
     height: 0.9rem;
     width: auto;
 }
 
-.hero-badge span {
+#sg-preseason-camp .hero-badge span {
     color: white;
     font-size: 0.75rem;
     font-weight: 600;
@@ -1339,38 +1340,38 @@
 }
 
 @media (min-width: 768px) {
-    .hero-badge {
+    #sg-preseason-camp .hero-badge {
         padding: 0.5rem 1rem;
         margin-bottom: 1.5rem;
         gap: 0.5rem;
     }
     
-    .hero-badge-logo {
+    #sg-preseason-camp .hero-badge-logo {
         height: 1rem;
     }
     
-    .hero-badge span {
+    #sg-preseason-camp .hero-badge span {
         font-size: 0.8rem;
     }
 }
 
 @media (min-width: 1024px) {
-    .hero-badge {
+    #sg-preseason-camp .hero-badge {
         padding: 0.6rem 1.2rem;
         gap: 0.5rem;
     }
     
-    .hero-badge-logo {
+    #sg-preseason-camp .hero-badge-logo {
         height: 1.1rem;
     }
     
-    .hero-badge span {
+    #sg-preseason-camp .hero-badge span {
         font-size: 0.85rem;
     }
 }
 
 /* ===== New hero structure ===== */
-.hero-main-title {
+#sg-preseason-camp .hero-main-title {
   font-size: clamp(1.6rem, 4vw + .8rem, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
@@ -1378,7 +1379,7 @@
   margin-bottom: 1rem;
 }
 
-.hero-subtitle {
+#sg-preseason-camp .hero-subtitle {
   font-size: clamp(1rem, 2vw + .5rem, 1.4rem);
   font-weight: 400;
   color: white;
@@ -1387,11 +1388,11 @@
   margin-bottom: 1.5rem;
 }
 
-.hero-details {
+#sg-preseason-camp .hero-details {
   margin-bottom: 2rem;
 }
 
-.hero-detail-item {
+#sg-preseason-camp .hero-detail-item {
   font-size: clamp(0.85rem, 1.5vw + .3rem, 1.1rem);
   color: white;
   opacity: 0.9;
@@ -1399,28 +1400,28 @@
   line-height: 1.4;
 }
 
-.hero-detail-item:last-child {
+#sg-preseason-camp .hero-detail-item:last-child {
   margin-bottom: 0;
 }
 
-.cta-green {
+#sg-preseason-camp .cta-green {
   background-color: #00c853 !important;
   color: white !important;
   font-size: clamp(0.9rem, 0.75rem + 1.5vw, 1.2rem) !important;
   padding: 0.7rem 1.4rem !important;
 }
 
-.cta-green:hover {
+#sg-preseason-camp .cta-green:hover {
   background-color: #00d65f !important;
   color: white !important;
 }
 
-.hero-detail-item i {
+#sg-preseason-camp .hero-detail-item i {
   margin-right: 0.4rem;
   color: white;
 }
 
-.countdown-label {
+#sg-preseason-camp .countdown-label {
   font-size: clamp(0.8rem, 1.3vw + .2rem, 1rem);
   color: white;
   opacity: 0.9;
@@ -1428,12 +1429,12 @@
   margin-bottom: 0.3rem;
 }
 
-.countdown-label i {
+#sg-preseason-camp .countdown-label i {
   margin-right: 0.4rem;
   color: white;
 }
 
-.countdown-timer {
+#sg-preseason-camp .countdown-timer {
   font-size: clamp(1.3rem, 3vw + .8rem, 2rem);
   font-weight: 600;
   color: white;
@@ -1442,405 +1443,408 @@
 
 /* Bigger CTA on mobile */
 @media (max-width: 767px) {
-  .cta-green {
+  #sg-preseason-camp .cta-green {
     font-size: clamp(1rem, 0.85rem + 2vw, 1.3rem) !important;
     padding: 0.8rem 1.6rem !important;
   }
 }
 
-    </style>
+    
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
-                <img class="logo-full" src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" loading="lazy">
-            </a>
-            <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
-                <img class="logo-sygnet" src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/imK5hG4oPpwCa314TFOm9fYccTQ34H6tDvAM3fgQ.png" alt="Sportigio sygnet" loading="lazy">
-            </a>
-        </div>
-        <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta mobile-only">Zapisz się</a>
-        <ul class="navbar-nav">
-            <li><a href="#terminy">Terminy</a></li>
-            <li><a href="#zyskujesz">Co zyskujesz?</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
-        <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta desktop-only">Zapisz się</a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" class="hero-badge-logo">
-                    <span>PreSeason Camp 2025</span>
-                </div>
-                <h1 class="hero-main-title">Bezpłatny program <br>dla klubów sportowych</h1>
-                <p class="hero-subtitle">Przygotuj klub do sezonu z narzędziami online, oszczędzaj czas i zwiększ przychody</p>
-                <div class="hero-details">
-                    <div class="hero-detail-item"><i class="fas fa-calendar-alt"></i> Start: <strong>30 czerwca | godz. 17:00 </strong>(Live 1,5h)</div>
-                    <div class="hero-detail-item"><i class="fas fa-hourglass-half"></i> Dostęp: 30.06 - 03.08.2025 (4 tygodnie tematyczne)</div>
-                    <div class="hero-detail-item"><i class="fas fa-user"></i> Gotowe instrukcje i materiały do samodzielnego wdrożenia</div>
-                </div>
-                <a href="https://forms.sportigio.com/preseason-camp" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</a>
-                <p class="countdown-label"> Do startu pozostało:</p>
-                <div id="countdown" class="countdown-timer">-- dni -- godzin -- minut</div>
+    <div id="sg-preseason-camp">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
+                    <img class="logo-full" src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" loading="lazy">
+                </a>
+                <a href="https://lp.sportigio.com" target="_blank" rel="noopener">
+                    <img class="logo-sygnet" src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/imK5hG4oPpwCa314TFOm9fYccTQ34H6tDvAM3fgQ.png" alt="Sportigio sygnet" loading="lazy">
+                </a>
             </div>
-            <div class="hero-image">
-                <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/hNbiLYcCqK2XS5DONBeIFUlGIBDK0y1UWuvIg64f.png" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
-            </div>
-        </div>
-    </section>
+            <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta mobile-only">Zapisz się</a>
+            <ul class="navbar-nav">
+                <li><a href="#terminy">Terminy</a></li>
+                <li><a href="#zyskujesz">Co zyskujesz?</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta desktop-only">Zapisz się</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        </nav>
 
-    <section class="about-section">
-        <div class="container">
-            <h2>Czym jest <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/zQyo44eRsCVhS5pZr4m83SjxSrh7j5xk2ttHJoOE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp?</h2>
-            <p class="intro">Praktyczny program, dzięki któremu uruchomisz stronę swojego klubu w kilka dni</p>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" class="hero-badge-logo">
+                        <span>PreSeason Camp 2025</span>
                     </div>
-                    <h3>Gotowe zadania zamiast teorii</h3>
-                    <p>Co tydzień otrzymujesz konkretne zadania, instrukcję i potrzebne narzędzia</p>
+                    <h1 class="hero-main-title">Bezpłatny program <br>dla klubów sportowych</h1>
+                    <p class="hero-subtitle">Przygotuj klub do sezonu z narzędziami online, oszczędzaj czas i zwiększ przychody</p>
+                    <div class="hero-details">
+                        <div class="hero-detail-item"><i class="fas fa-calendar-alt"></i> Start: <strong>30 czerwca | godz. 17:00 </strong>(Live 1,5h)</div>
+                        <div class="hero-detail-item"><i class="fas fa-hourglass-half"></i> Dostęp: 30.06 - 03.08.2025 (4 tygodnie tematyczne)</div>
+                        <div class="hero-detail-item"><i class="fas fa-user"></i> Gotowe instrukcje i materiały do samodzielnego wdrożenia</div>
+                    </div>
+                    <a href="https://forms.sportigio.com/preseason-camp" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</a>
+                    <p class="countdown-label"> Do startu pozostało:</p>
+                    <div id="countdown" class="countdown-timer">-- dni -- godzin -- minut</div>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Wsparcie ekspertów i społeczności</h3>
-                    <p>Masz dostęp do grupy, webinarów oraz konsultacji 1:1. Dostajesz wsparcie merytoryczne i techniczne, kiedy tylko go potrzebujesz.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Wszystko dostępne 24/7</h3>
-                    <p>Nie musisz być na żywo – dostajesz wszystkie nagrania i materiały. Możesz działać w swoim tempie i o dowolnej porze.</p>
+                <div class="hero-image">
+                    <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/hNbiLYcCqK2XS5DONBeIFUlGIBDK0y1UWuvIg64f.png" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="webinar-section">
-        <div class="container">
-            <h2><i class="fas fa-play-circle"></i> Start: Webinar otwierający – 30 czerwca</h2>
-            <!-- NEW layout wrapper -->
-            <div class="webinar-layout">
-                <div class="webinar-image">
-                    <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/dq4uiWLS2mAowEyduV33hmrUVn10TNlOCUAPnaaE.jpg" alt="Webinar prezentacja Sportigio" loading="lazy">
-                </div>
-                <div class="webinar-info">
-                    <div class="webinar-date">
-                        <span><strong>Termin: 30 czerwca, godz. 17:00</strong></span>
+        <section class="about-section">
+            <div class="container">
+                <h2>Czym jest <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/zQyo44eRsCVhS5pZr4m83SjxSrh7j5xk2ttHJoOE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp?</h2>
+                <p class="intro">Praktyczny program, dzięki któremu uruchomisz stronę swojego klubu w kilka dni</p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Gotowe zadania zamiast teorii</h3>
+                        <p>Co tydzień otrzymujesz konkretne zadania, instrukcję i potrzebne narzędzia</p>
                     </div>
-                    <div class="webinar-topics">
-                        <h3>W programie webinaru:</h3>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Wsparcie ekspertów i społeczności</h3>
+                        <p>Masz dostęp do grupy, webinarów oraz konsultacji 1:1. Dostajesz wsparcie merytoryczne i techniczne, kiedy tylko go potrzebujesz.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Wszystko dostępne 24/7</h3>
+                        <p>Nie musisz być na żywo – dostajesz wszystkie nagrania i materiały. Możesz działać w swoim tempie i o dowolnej porze.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="webinar-section">
+            <div class="container">
+                <h2><i class="fas fa-play-circle"></i> Start: Webinar otwierający – 30 czerwca</h2>
+                <!-- NEW layout wrapper -->
+                <div class="webinar-layout">
+                    <div class="webinar-image">
+                        <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/dq4uiWLS2mAowEyduV33hmrUVn10TNlOCUAPnaaE.jpg" alt="Webinar prezentacja Sportigio" loading="lazy">
+                    </div>
+                    <div class="webinar-info">
+                        <div class="webinar-date">
+                            <span><strong>Termin: 30 czerwca, godz. 17:00</strong></span>
+                        </div>
+                        <div class="webinar-topics">
+                            <h3>W programie webinaru:</h3>
+                            <ul>
+                                <li>Co nowego w Sportigio w sezonie 2025/26</li>
+                                <li>Jak działa darmowy plan i co dokładnie oferuje</li>
+                                <li>Od czego zacząć – krok po kroku</li>
+                                <li>Pokaz kreatora strony: zbuduj demo w 5 minut</li>
+                                <li>Przykłady stron klubów i Q&amp;A</li>
+                            </ul>
+                        </div>
+                        <div class="webinar-cta-row">
+                            <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
+                        </div>
+                    </div><!-- /.webinar-info -->
+                </div><!-- /.webinar-layout -->
+            </div>
+        </section>
+
+        <section class="schedule-section" id="terminy">
+            <div class="container">
+                <h2>Terminy i tematy tygodnia</h2>
+                <div class="schedule-cards">
+                    <div class="schedule-card" data-week="1">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <div class="card-date">30 czerwca - 5 lipca</div>
+                                <h3 class="card-title">Strona internetowa</h3>
+                            </div>
+                        </div>
+                        <p class="card-description">Wybierzesz szablon, dodasz treści, uruchomisz automatyczne wyniki.</p>
+                    </div>
+
+                    <div class="schedule-card" data-week="2">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div>
+                                <div class="card-date">7–12 lipca</div>
+                                <h3 class="card-title">Bilety i karnety</h3>
+                            </div>
+                        </div>
+                        <p class="card-description">Wstawisz wydarzenie i bilety na mecze, zaczniesz sprzedawać w kilka minut.</p>
+                    </div>
+
+                    <div class="schedule-card" data-week="3">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div>
+                                <div class="card-date">14–20 lipca</div>
+                                <h3 class="card-title">Sklep bez magazynu</h3>
+                            </div>
+                        </div>
+                        <p class="card-description">Stworzysz gadżety i zaczniesz sprzedaż bez ryzyka.</p>
+                    </div>
+
+                    <div class="schedule-card" data-week="4">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <div class="card-date">21–27 lipca</div>
+                                <h3 class="card-title">Fan Engagement</h3>
+                            </div>
+                        </div>
+                        <p class="card-description">Dodasz quizy i aktywności dla kibiców.</p>
+                    </div>
+
+                    <div class="schedule-card" data-week="5">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div>
+                                <div class="card-date">28 lipca –3 sierpnia</div>
+                                <h3 class="card-title">Strefa Biznes i VIP</h3>
+                            </div>
+                        </div>
+                        <p class="card-description">Zbudujesz sekcję dla sponsorów: oferty, logotypy, pakiety.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section" id="zyskujesz">
+            <div class="container">
+                <h2>Co zyskujesz jako uczestnik?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <p>Konto i profil klubu w Sportigio (darmowy plan)</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <p>Dostęp do panelu i narzędzi (strona, FanApp, bilety, sklep)</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <p>Gotowe szablony, checklisty, przewodniki</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <p>Grupa wsparcia i konsultacje z zespołem Sportigio</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <p>Dostęp do nagrań – jeśli nie możesz być na żywo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audience-section">
+            <div class="container">
+                <h2>Dla kogo jest <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp?</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; margin-top: -2.5rem; opacity: 0.9">Dla Prezesów, trenerów, działaczów i osób, które odpowiadają za rozwój klubu – nawet jeśli nie mają dużego zespołu ani budżetu.</p>
+                <div class="audience-content">
+                    <div class="audience-box">
+                        <p class="audience-intro"><i class="fas fa-bullseye"></i> To idealne rozwiązanie, jeśli Twój klub:</p>
                         <ul>
-                            <li>Co nowego w Sportigio w sezonie 2025/26</li>
-                            <li>Jak działa darmowy plan i co dokładnie oferuje</li>
-                            <li>Od czego zacząć – krok po kroku</li>
-                            <li>Pokaz kreatora strony: zbuduj demo w 5 minut</li>
-                            <li>Przykłady stron klubów i Q&amp;A</li>
+                            <li><i class="fas fa-check"></i> Chce wprowadzić nowoczesne rozwiązania</li>
+                            <li><i class="fas fa-check"></i> Szuka <strong>nowych źródeł przychodu</strong></li>
+                            <li><i class="fas fa-check"></i> Potrzebuje efektów <strong>tu i teraz</strong></li>
+                            <li><i class="fas fa-check"></i> Nie ma czasu na skomplikowane wdrożenia</li>
+                            <li><i class="fas fa-check"></i> Lubi narzędzia, które po prostu działają</li>
                         </ul>
                     </div>
-                    <div class="webinar-cta-row">
-                        <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
+                    <div class="audience-box">
+                        <p class="audience-intro"><i class="fas fa-rocket"></i> Co zrobisz już po pierwszym webinarze:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Aktywujesz publiczny link swojego klubu</li>
+                            <li><i class="fas fa-check"></i> Uruchomisz pierwszą stronę na gotowym szablonie</li>
+                            <li><i class="fas fa-check"></i> Poznasz narzędzia do sprzedaży i komunikacji</li>
+                            <li><i class="fas fa-check"></i> Wybierzesz plan działania dopasowany do swoich możliwości</li>
+                            <li><i class="fas fa-check"></i> Dołączysz do Campu i zaczniesz działać z pełnym wsparciem</li>
+                        </ul>
                     </div>
-                </div><!-- /.webinar-info -->
-            </div><!-- /.webinar-layout -->
-        </div>
-    </section>
-
-    <section class="schedule-section" id="terminy">
-        <div class="container">
-            <h2>Terminy i tematy tygodnia</h2>
-            <div class="schedule-cards">
-                <div class="schedule-card" data-week="1">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <div class="card-date">30 czerwca - 5 lipca</div>
-                            <h3 class="card-title">Strona internetowa</h3>
-                        </div>
-                    </div>
-                    <p class="card-description">Wybierzesz szablon, dodasz treści, uruchomisz automatyczne wyniki.</p>
-                </div>
-
-                <div class="schedule-card" data-week="2">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-ticket-alt"></i>
-                        </div>
-                        <div>
-                            <div class="card-date">7–12 lipca</div>
-                            <h3 class="card-title">Bilety i karnety</h3>
-                        </div>
-                    </div>
-                    <p class="card-description">Wstawisz wydarzenie i bilety na mecze, zaczniesz sprzedawać w kilka minut.</p>
-                </div>
-
-                <div class="schedule-card" data-week="3">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div>
-                            <div class="card-date">14–20 lipca</div>
-                            <h3 class="card-title">Sklep bez magazynu</h3>
-                        </div>
-                    </div>
-                    <p class="card-description">Stworzysz gadżety i zaczniesz sprzedaż bez ryzyka.</p>
-                </div>
-
-                <div class="schedule-card" data-week="4">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div>
-                            <div class="card-date">21–27 lipca</div>
-                            <h3 class="card-title">Fan Engagement</h3>
-                        </div>
-                    </div>
-                    <p class="card-description">Dodasz quizy i aktywności dla kibiców.</p>
-                </div>
-
-                <div class="schedule-card" data-week="5">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <div>
-                            <div class="card-date">28 lipca –3 sierpnia</div>
-                            <h3 class="card-title">Strefa Biznes i VIP</h3>
-                        </div>
-                    </div>
-                    <p class="card-description">Zbudujesz sekcję dla sponsorów: oferty, logotypy, pakiety.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="benefits-section" id="zyskujesz">
-        <div class="container">
-            <h2>Co zyskujesz jako uczestnik?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
-                    <p>Konto i profil klubu w Sportigio (darmowy plan)</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
-                    <p>Dostęp do panelu i narzędzi (strona, FanApp, bilety, sklep)</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
-                    <p>Gotowe szablony, checklisty, przewodniki</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
-                    <p>Grupa wsparcia i konsultacje z zespołem Sportigio</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
-                    <p>Dostęp do nagrań – jeśli nie możesz być na żywo</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="audience-section">
-        <div class="container">
-            <h2>Dla kogo jest <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp?</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; margin-top: -2.5rem; opacity: 0.9">Dla Prezesów, trenerów, działaczów i osób, które odpowiadają za rozwój klubu – nawet jeśli nie mają dużego zespołu ani budżetu.</p>
-            <div class="audience-content">
-                <div class="audience-box">
-                    <p class="audience-intro"><i class="fas fa-bullseye"></i> To idealne rozwiązanie, jeśli Twój klub:</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Chce wprowadzić nowoczesne rozwiązania</li>
-                        <li><i class="fas fa-check"></i> Szuka <strong>nowych źródeł przychodu</strong></li>
-                        <li><i class="fas fa-check"></i> Potrzebuje efektów <strong>tu i teraz</strong></li>
-                        <li><i class="fas fa-check"></i> Nie ma czasu na skomplikowane wdrożenia</li>
-                        <li><i class="fas fa-check"></i> Lubi narzędzia, które po prostu działają</li>
-                    </ul>
-                </div>
-                <div class="audience-box">
-                    <p class="audience-intro"><i class="fas fa-rocket"></i> Co zrobisz już po pierwszym webinarze:</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Aktywujesz publiczny link swojego klubu</li>
-                        <li><i class="fas fa-check"></i> Uruchomisz pierwszą stronę na gotowym szablonie</li>
-                        <li><i class="fas fa-check"></i> Poznasz narzędzia do sprzedaży i komunikacji</li>
-                        <li><i class="fas fa-check"></i> Wybierzesz plan działania dopasowany do swoich możliwości</li>
-                        <li><i class="fas fa-check"></i> Dołączysz do Campu i zaczniesz działać z pełnym wsparciem</li>
-                    </ul>
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>FAQ – najczęstsze pytania</h2>
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Czy muszę być na żywo?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p><strong>Nie.</strong> Wszystkie webinary są nagrywane – możesz je obejrzeć wtedy, gdy masz czas.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Czy to coś kosztuje?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p><strong>Nie.</strong> Udział w Campie i omawiane narzędzia są darmowe. Możesz wykupić dodatkowe wsparcie lub pakiet, ale tylko jeśli będziesz potrzebować.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Czy dam radę bez wiedzy technicznej?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Zdecydowanie. Camp jest zaprojektowany dla osób, które nie mają doświadczenia z IT – poprowadzimy Cię krok po kroku.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Czy muszę mieć własną domenę?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p><strong>Nie musisz.</strong> Możesz użyć swojej, ale jeśli jej nie masz – dostaniesz subdomenę Sportigio.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Kto może wziąć udział?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Każdego klub, który chce działać nowocześnie – bez zbędnych formalności i kosztów.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="faq-section" id="faq">
-        <div class="container">
-            <h2>FAQ – najczęstsze pytania</h2>
-            <div class="faq-grid">
-                <details class="faq-item">
-                    <summary class="faq-question">
-                        <span>Czy muszę być na żywo?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </summary>
-                    <div class="faq-answer">
-                        <p><strong>Nie.</strong> Wszystkie webinary są nagrywane – możesz je obejrzeć wtedy, gdy masz czas.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">
-                        <span>Czy to coś kosztuje?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </summary>
-                    <div class="faq-answer">
-                        <p><strong>Nie.</strong> Udział w Campie i omawiane narzędzia są darmowe. Możesz wykupić dodatkowe wsparcie lub pakiet, ale tylko jeśli będziesz potrzebować.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">
-                        <span>Czy dam radę bez wiedzy technicznej?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </summary>
-                    <div class="faq-answer">
-                        <p>Zdecydowanie. Camp jest zaprojektowany dla osób, które nie mają doświadczenia z IT – poprowadzimy Cię krok po kroku.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">
-                        <span>Czy muszę mieć własną domenę?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </summary>
-                    <div class="faq-answer">
-                        <p><strong>Nie musisz.</strong> Możesz użyć swojej, ale jeśli jej nie masz – dostaniesz subdomenę Sportigio.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">
-                        <span>Kto może wziąć udział?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </summary>
-                    <div class="faq-answer">
-                        <p>Każdego klub, który chce działać nowocześnie – bez zbędnych formalności i kosztów.</p>
-                    </div>
-                </details>
+        <section class="final-cta-section" id="zapisz-sie">
+            <div class="container">
+                <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp 2025</h2>
+                <p>Zacznij sezon z gotową stroną, sklepem<br class="mobile-only"> i aplikacją dla kibiców – <strong>całkowicie za darmo</strong>.</p>
+                <a href="https://forms.sportigio.com/preseason-camp" class="cta-button">Zapisz się teraz</a>
+                <p class="cta-note">Bez umów, bez zobowiązań. Z pełnym wsparciem.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="final-cta-section" id="zapisz-sie">
-        <div class="container">
-            <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp 2025</h2>
-            <p>Zacznij sezon z gotową stroną, sklepem<br class="mobile-only"> i aplikacją dla kibiców – <strong>całkowicie za darmo</strong>.</p>
-            <a href="https://forms.sportigio.com/preseason-camp" class="cta-button">Zapisz się teraz</a>
-            <p class="cta-note">Bez umów, bez zobowiązań. Z pełnym wsparciem.</p>
-        </div>
-    </section>
+        <script>
+            // Mobile menu toggle – simplified, click only
+            const nav  = document.querySelector('.navbar-nav');
+            const btn  = document.querySelector('.mobile-menu-btn');
+            const icon = btn.querySelector('i');
 
-    <script>
-        // Mobile menu toggle – simplified, click only
-        const nav  = document.querySelector('.navbar-nav');
-        const btn  = document.querySelector('.mobile-menu-btn');
-        const icon = btn.querySelector('i');
+            btn.addEventListener('click', () => {
+                const opened = nav.classList.toggle('active');
+                btn.setAttribute('aria-expanded', opened);
+                icon.className = opened ? 'fas fa-times' : 'fas fa-bars';
+            });
 
-        btn.addEventListener('click', () => {
-            const opened = nav.classList.toggle('active');
-            btn.setAttribute('aria-expanded', opened);
-            icon.className = opened ? 'fas fa-times' : 'fas fa-bars';
-        });
+            // Close menu after clicking any link inside
+            nav.addEventListener('click', (e) => {
+                if (e.target.matches('a') && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    btn.setAttribute('aria-expanded', false);
+                    icon.className = 'fas fa-bars';
+                }
+            });
 
-        // Close menu after clicking any link inside
-        nav.addEventListener('click', (e) => {
-            if (e.target.matches('a') && nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                btn.setAttribute('aria-expanded', false);
-                icon.className = 'fas fa-bars';
-            }
-        });
-
-        // Schedule cards auto-activation based on current date
-        function setActiveScheduleCard() {
-            const scheduleCards = document.querySelectorAll('.schedule-card');
-            const today = new Date();
-            
-            // Define start dates for each week (2025) – aligned with 5 schedule cards
-            const weekStartDates = [
-                new Date(2025, 5, 30), // 30 czerwca
-                new Date(2025, 6, 7),  // 7 lipca
-                new Date(2025, 6, 14), // 14 lipca
-                new Date(2025, 6, 21), // 21 lipca
-                new Date(2025, 6, 28)  // 28 lipca
-            ];
-            
-            // Find the current active week
-            let activeWeekIndex = 0;
-            
-            for (let i = 0; i < weekStartDates.length; i++) {
-                if (today >= weekStartDates[i]) {
-                    activeWeekIndex = i;
-                } else {
-                    break;
+            // Schedule cards auto-activation based on current date
+            function setActiveScheduleCard() {
+                const scheduleCards = document.querySelectorAll('.schedule-card');
+                const today = new Date();
+                
+                // Define start dates for each week (2025) – aligned with 5 schedule cards
+                const weekStartDates = [
+                    new Date(2025, 5, 30), // 30 czerwca
+                    new Date(2025, 6, 7),  // 7 lipca
+                    new Date(2025, 6, 14), // 14 lipca
+                    new Date(2025, 6, 21), // 21 lipca
+                    new Date(2025, 6, 28)  // 28 lipca
+                ];
+                
+                // Find the current active week
+                let activeWeekIndex = 0;
+                
+                for (let i = 0; i < weekStartDates.length; i++) {
+                    if (today >= weekStartDates[i]) {
+                        activeWeekIndex = i;
+                    } else {
+                        break;
+                    }
+                }
+                
+                // Remove active class from all cards
+                scheduleCards.forEach(card => card.classList.remove('active'));
+                
+                // Add active class to current week card
+                if (scheduleCards[activeWeekIndex]) {
+                    scheduleCards[activeWeekIndex].classList.add('active');
                 }
             }
             
-            // Remove active class from all cards
-            scheduleCards.forEach(card => card.classList.remove('active'));
-            
-            // Add active class to current week card
-            if (scheduleCards[activeWeekIndex]) {
-                scheduleCards[activeWeekIndex].classList.add('active');
-            }
-        }
-        
-        // Set active card on page load
-        setActiveScheduleCard();
+            // Set active card on page load
+            setActiveScheduleCard();
 
-        // ===== Countdown timer to 30 June 2025 17:00 =====
-        const countdownEl = document.getElementById('countdown');
-        const targetDate = new Date(2025, 5, 30, 17, 0, 0); // months 0-indexed
+            // ===== Countdown timer to 30 June 2025 17:00 =====
+            const countdownEl = document.getElementById('countdown');
+            const targetDate = new Date(2025, 5, 30, 17, 0, 0); // months 0-indexed
 
-        // Zwraca właściwą odmianę rzeczownika w zależności od liczby
-        function pluralizePL(n, one, few, many) {
-            const v = Math.abs(n);
-            if (v % 10 === 1 && v % 100 !== 11) return one;      // 1, 21, 31...
-            if ([2, 3, 4].includes(v % 10) && ![12, 13, 14].includes(v % 100)) {
-                return few;                                      // 2-4, 22-24, 32-34...
-            }
-            return many;                                          // 0, 5-20, 11-14, 25-30...
-        }
-
-        function updateCountdown() {
-            const now = new Date();
-            const diff = targetDate - now;
-
-            // Jeśli czas minął – pokaż zera i zatrzymaj licznik
-            if (diff <= 0) {
-                countdownEl.textContent = '0 dni 00 godzin 00 minut';
-                clearInterval(timerId);
-                return;
+            // Zwraca właściwą odmianę rzeczownika w zależności od liczby
+            function pluralizePL(n, one, few, many) {
+                const v = Math.abs(n);
+                if (v % 10 === 1 && v % 100 !== 11) return one;      // 1, 21, 31...
+                if ([2, 3, 4].includes(v % 10) && ![12, 13, 14].includes(v % 100)) {
+                    return few;                                      // 2-4, 22-24, 32-34...
+                }
+                return many;                                          // 0, 5-20, 11-14, 25-30...
             }
 
-            const minutes = Math.floor(diff / (1000 * 60)) % 60;
-            const hours   = Math.floor(diff / (1000 * 60 * 60)) % 24;
-            const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+            function updateCountdown() {
+                const now = new Date();
+                const diff = targetDate - now;
 
-            const dayWord    = pluralizePL(days,    'dzień',   'dni',    'dni');
-            const hourWord   = pluralizePL(hours,   'godzina', 'godziny','godzin');
-            const minuteWord = pluralizePL(minutes, 'minuta',  'minuty', 'minut');
+                // Jeśli czas minął – pokaż zera i zatrzymaj licznik
+                if (diff <= 0) {
+                    countdownEl.textContent = '0 dni 00 godzin 00 minut';
+                    clearInterval(timerId);
+                    return;
+                }
 
-            countdownEl.textContent = `${days} ${dayWord} ${String(hours).padStart(2, '0')} ${hourWord} ${String(minutes).padStart(2, '0')} ${minuteWord}`;
-        }
+                const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                const hours   = Math.floor(diff / (1000 * 60 * 60)) % 24;
+                const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-        updateCountdown();
-        const timerId = setInterval(updateCountdown, 1000);
-    </script>
+                const dayWord    = pluralizePL(days,    'dzień',   'dni',    'dni');
+                const hourWord   = pluralizePL(hours,   'godzina', 'godziny','godzin');
+                const minuteWord = pluralizePL(minutes, 'minuta',  'minuty', 'minut');
+
+                countdownEl.textContent = `${days} ${dayWord} ${String(hours).padStart(2, '0')} ${hourWord} ${String(minutes).padStart(2, '0')} ${minuteWord}`;
+            }
+
+            updateCountdown();
+            const timerId = setInterval(updateCountdown, 1000);
+        </script>
+    </div>
 </body>
 </html>
