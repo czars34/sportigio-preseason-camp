@@ -817,6 +817,7 @@
             line-height: 1.5;
             margin-top: 0.8rem;
             min-height: 3.5em;
+            flex-grow: 1;             /* rozpycha, by CTA zawsze na dole */
         }
 
         #sg-preseason-camp .schedule-card.active .card-description {
@@ -859,7 +860,7 @@
 
             /* Equalise card height on tablet */
             #sg-preseason-camp .schedule-card {
-                min-height: 340px;
+                min-height: 380px; /* jednolite */
             }
         }
 
@@ -903,15 +904,44 @@
                 margin-top: 1rem;
             }
 
-            /* Equalise card height on desktop - a bit taller */
+            /* Equalise card height on desktop (uwzględnia CTA) */
             #sg-preseason-camp .schedule-card {
-                min-height: 320px;
+                min-height: 380px;        /* jednolite */
             }
         }
 
         /* Prevent long date ranges breaking into two lines */
         #sg-preseason-camp .card-date {
             white-space: nowrap;
+        }
+
+        /* Schedule card CTA button */
+        #sg-preseason-camp .schedule-cta {
+            margin-top: 1rem;
+            font-size: 0.65rem !important;         /* jeszcze mniejszy tekst */
+            padding: 0.25rem 0.8rem !important;    /* węższy */
+            display: inline-flex;
+            align-self: center;
+            width: auto;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            color: #0B2360 !important;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            text-transform: none;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #sg-preseason-camp .schedule-cta:hover {
+            background-color: white !important;
+            color: #0B2360 !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #sg-preseason-camp .schedule-card.active .schedule-cta {
+            background-color: white !important;
+            color: #0B2360 !important;
         }
 
         /* Benefits Section */
@@ -1433,6 +1463,12 @@
   text-align: center;
 }
 
+#sg-preseason-camp .program-signup iframe{
+  display:block;        /* pozbywa się inline-gapów */
+  margin:0 auto;        /* auto margin = center */
+  max-width:500px;      /* opcjonalnie zwęża na desktopie */
+}
+
 #sg-preseason-camp .countdown-label i {
   margin-right: 0.4rem;
   color: white;
@@ -1813,7 +1849,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/eyblrLEnivG0vgJJqOnbJgkkPq4gpswZpjzaHlOo.webp" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
+                    <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/xluVUVTWL5w4rO3qMkoZqFYdYEQoTQXAB9JeVDU0.webp" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
                 </div>
             </div>
         </section>
@@ -1930,35 +1966,30 @@
             </div>
         </section>
 
-        <!-- <section class="about-section">
-            <div class="container">
-                <h2>Czym jest <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/zQyo44eRsCVhS5pZr4m83SjxSrh7j5xk2ttHJoOE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp?</h2>
-                <p class="intro">Praktyczny program, dzięki któremu uruchomisz stronę swojego klubu w kilka dni</p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Gotowe zadania zamiast teorii</h3>
-                        <p>Co tydzień otrzymujesz konkretne zadania, instrukcję i potrzebne narzędzia</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Wsparcie ekspertów i społeczności</h3>
-                        <p>Masz dostęp do grupy, webinarów oraz konsultacji 1:1. Dostajesz wsparcie merytoryczne i techniczne, kiedy tylko go potrzebujesz.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Wszystko dostępne 24/7</h3>
-                        <p>Nie musisz być na żywo – dostajesz wszystkie nagrania i materiały. Możesz działać w swoim tempie i o dowolnej porze.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+        <div class="program-signup" style="max-width:800px;margin:0 auto 3rem;text-align:center;">
+            <h3 style="font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:600;color:#0B2360;margin-bottom:1.5rem;">Uzyskaj dostęp już teraz</h3>
+            <iframe data-tally-src="https://tally.so/embed/wgxR6d?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="386" frameborder="0" marginheight="0" marginwidth="0" title="Zapisy - PreSeason Camp"></iframe>
+            <script>
+            var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+                if(typeof Tally!=="undefined"){
+                    Tally.loadEmbeds();
+                } else {
+                    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
+                        e.src=e.dataset.tallySrc;
+                    });
+                }
+            };
+            if(typeof Tally!=="undefined"){
+                v();
+            } else if(d.querySelector('script[src="'+w+'"]')==null){
+                var s=d.createElement("script");
+                s.src=w;
+                s.onload=v;
+                s.onerror=v;
+                d.body.appendChild(s);
+            }
+            </script>
+        </div>
 
         <section class="webinar-section">
             <div class="container">
@@ -2005,6 +2036,7 @@
                             </div>
                         </div>
                         <p class="card-description">Wybierzesz szablon, dodasz treści, uruchomisz automatyczne wyniki.</p>
+                        <a href="https://forms.sportigio.com/preseason-camp" class="cta-button schedule-cta">Zapisz się</a>
                     </div>
 
                     <div class="schedule-card" data-week="2">
@@ -2018,6 +2050,7 @@
                             </div>
                         </div>
                         <p class="card-description">Wstawisz wydarzenie i bilety na mecze, zaczniesz sprzedawać w kilka minut.</p>
+                        <a href="https://forms.sportigio.com/preseason-camp" class="cta-button schedule-cta">Zapisz się</a>
                     </div>
 
                     <div class="schedule-card" data-week="3">
@@ -2031,6 +2064,7 @@
                             </div>
                         </div>
                         <p class="card-description">Stworzysz gadżety i zaczniesz sprzedaż bez ryzyka.</p>
+                        <a href="https://forms.sportigio.com/preseason-camp" class="cta-button schedule-cta">Zapisz się</a>
                     </div>
 
                     <div class="schedule-card" data-week="4">
@@ -2044,6 +2078,7 @@
                             </div>
                         </div>
                         <p class="card-description">Dodasz quizy i aktywności dla kibiców.</p>
+                        <a href="https://forms.sportigio.com/preseason-camp" class="cta-button schedule-cta">Zapisz się</a>
                     </div>
 
                     <div class="schedule-card" data-week="5">
@@ -2057,6 +2092,7 @@
                             </div>
                         </div>
                         <p class="card-description">Zbudujesz sekcję dla sponsorów: oferty, logotypy, pakiety.</p>
+                        <a href="https://forms.sportigio.com/preseason-camp" class="cta-button schedule-cta">Zapisz się</a>
                     </div>
                 </div>
             </div>
