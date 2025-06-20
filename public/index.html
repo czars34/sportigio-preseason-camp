@@ -1523,7 +1523,114 @@
   @media (min-width: 768px) {
     #sg-preseason-camp .tally-fab { display: none; }
   }
-  /* Program Section - ikony z opisami */
+          /* Clubs Section */
+        #sg-preseason-camp .clubs-section {
+            background: white;
+            padding: 2.5rem 0 1rem; /* Reduced bottom padding */
+            overflow: hidden;
+        }
+
+        #sg-preseason-camp .clubs-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem; /* Reduced size */
+            font-weight: 600;
+            text-align: center;
+            color: #0B2360;
+            margin-bottom: 2rem;
+            padding: 0 1rem; /* Add padding for the heading */
+        }
+
+        #sg-preseason-camp .clubs-slider {
+            width: 100%;
+            overflow: hidden;
+            mask: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            -webkit-mask: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+
+        #sg-preseason-camp .clubs-track {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* You can change this gap value */
+            animation: scroll-left 40s linear infinite;
+            width: max-content;
+        }
+
+        #sg-preseason-camp .club-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            height: 45px;
+        }
+
+        #sg-preseason-camp .club-logo img {
+            max-height: 40px; /* Reduced size */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Tablet styles */
+        @media (min-width: 768px) {
+            #sg-preseason-camp .clubs-section {
+                padding: 3rem 0 1.5rem; /* Reduced bottom padding */
+            }
+            
+            #sg-preseason-camp .clubs-section h2 {
+                font-size: 1.4rem; /* Reduced size */
+                margin-bottom: 2.5rem;
+            }
+            
+            #sg-preseason-camp .clubs-track {
+                gap: 2.5rem; /* You can change this gap value */
+            }
+            
+            #sg-preseason-camp .club-logo {
+                height: 55px; /* Reduced height */
+                /* min-width: 110px; /* Removed */
+            }
+            
+            #sg-preseason-camp .club-logo img {
+                max-height: 50px; /* Reduced size */
+                /* max-width: 110px; /* Removed */
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+            #sg-preseason-camp .clubs-section {
+                padding: 3.5rem 0 .5rem; /* Reduced bottom padding */
+            }
+            
+            #sg-preseason-camp .clubs-section h2 {
+                font-size: 1.5rem; /* Reduced size */
+                margin-bottom: 3rem;
+            }
+            
+            #sg-preseason-camp .clubs-track {
+                gap: 3.5rem; /* You can change this gap value */
+            }
+            
+            #sg-preseason-camp .club-logo {
+                height: 65px; /* Reduced height */
+                /* min-width: 130px; /* Removed */
+            }
+            
+            #sg-preseason-camp .club-logo img {
+                max-height: 60px; /* Reduced size */
+                /* max-width: 130px; /* Removed */
+            }
+        }
+
+        /* Program Section - ikony z opisami */
 #sg-preseason-camp .program-section {
     background: white;
     color: #0B2360;
@@ -1707,6 +1814,86 @@
                 </div>
                 <div class="hero-image">
                     <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/eyblrLEnivG0vgJJqOnbJgkkPq4gpswZpjzaHlOo.webp" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
+                </div>
+            </div>
+        </section>
+
+        <section class="clubs-section">
+            <div class="container">
+                <h2>Dołącz do 100+ klubów, które zaufały <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/zQyo44eRsCVhS5pZr4m83SjxSrh7j5xk2ttHJoOE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.02em;" loading="lazy"></a></h2>
+                <div class="clubs-slider">
+                    <div class="clubs-track">
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/ENzQ23REyzL3ysEMyxYZWGAYR4.png" alt="KH Energa Toruń" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/0KM1dPx1zsqgIadjWs79uqReI.png?scale-down-to=1024" alt="Legia Warszawa" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/3sBrayuSCPDV0WYoOgreVQzZFA0.png" alt="PGE Projekt Warszawa" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/Hu78cYIwMW7qTE7hYBxhnrBBog.png" alt="Trefl Sopot" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/BeTF6EINyNx0s0KIbbzUOcoitI.png" alt="TS Wisła Kraków" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/WKGhp79685E1fLrgg3QlXNZpc.png" alt="Widzew Łódź" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/ASsu5qPIKkrjnmLThgbMt8U4c.png" alt="KSK Noteć Inowrocław" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/nkDMRTIneqIWAOHwJwGzT71rQ.png" alt="King Szczecin" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/SwrmawdTOhLHV8P9pKHSLeEYKcw.png" alt="FC Toruń" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/uVHLePwbSCu6vD4N3AtO8UksbPw.png" alt="Radomka Radom" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/igUix9ci7z5qhBFp9fi0pdVLJiQ.webp" alt="Twarde Pierniki" loading="lazy">
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/ENzQ23REyzL3ysEMyxYZWGAYR4.png" alt="KH Energa Toruń" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/0KM1dPx1zsqgIadjWs79uqReI.png?scale-down-to=1024" alt="Legia Warszawa" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/3sBrayuSCPDV0WYoOgreVQzZFA0.png" alt="PGE Projekt Warszawa" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/Hu78cYIwMW7qTE7hYBxhnrBBog.png" alt="Trefl Sopot" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/BeTF6EINyNx0s0KIbbzUOcoitI.png" alt="TS Wisła Kraków" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/WKGhp79685E1fLrgg3QlXNZpc.png" alt="Widzew Łódź" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/ASsu5qPIKkrjnmLThgbMt8U4c.png" alt="KSK Noteć Inowrocław" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/ASsu5qPIKkrjnmLThgbMt8U4c.png" alt="Trefl Sopot" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/nkDMRTIneqIWAOHwJwGzT71rQ.png" alt="King Szczecin" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/SwrmawdTOhLHV8P9pKHSLeEYKcw.png" alt="FC Toruń" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/uVHLePwbSCu6vD4N3AtO8UksbPw.png" alt="Radomka Radom" loading="lazy">
+                        </div>
+                        <div class="club-logo">
+                            <img src="https://framerusercontent.com/images/igUix9ci7z5qhBFp9fi0pdVLJiQ.webp" alt="Twarde Pierniki" loading="lazy">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
