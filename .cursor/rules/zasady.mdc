@@ -7,8 +7,7 @@ Zasady dla tego projektu:
 - font: Poppins i jego różne grubości
 - kolor dodatkowy: #0B2360
 - kolory tekstu: preferuj biały lub czarny
-- pracujemy w jednym pliku index.html - nie rozdzielamy JS,CSS od HTML
-- różne wersje logotypu firmy są w katalogu /assets
 - strona musi być responsywna, podejście mobile-first
 - jesli dodajesz ikony: korzystaj z font awesome
 - nie uzywamy żadnego emoji na stronie, preferuj ikony z font awesome
+- nowe skrypty dodawaj do /js lub zaktualizuj istniejące
