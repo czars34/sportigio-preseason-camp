@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "/pre-season-camp.html"
-      }
-    ]
-  }
-  

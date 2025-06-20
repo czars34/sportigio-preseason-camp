@@ -1430,6 +1430,7 @@
   opacity: 0.9;
   margin-top: 1.3rem;
   margin-bottom: 0.3rem;
+  text-align: center;
 }
 
 #sg-preseason-camp .countdown-label i {
@@ -1438,10 +1439,45 @@
 }
 
 #sg-preseason-camp .countdown-timer {
-  font-size: clamp(1.3rem, 3vw + .8rem, 2rem);
-  font-weight: 600;
-  color: white;
-  letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+#sg-preseason-camp .countdown-timer .time-box {
+    background: #ffffff;
+    color: #0B2360;
+    padding: 0.4rem 0.6rem;
+    width: 64px; /* fixed width for equal boxes */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+#sg-preseason-camp .countdown-timer .number {
+    font-size: clamp(1.4rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums; /* equal digit width */
+}
+
+#sg-preseason-camp .countdown-timer .label {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 0.15rem;
+}
+
+#sg-preseason-camp .countdown-timer .colon {
+    color: white;
+    font-size: clamp(1.4rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1;
 }
 
 /* Bigger CTA on mobile */
@@ -1449,6 +1485,17 @@
   #sg-preseason-camp .cta-green {
     font-size: clamp(1rem, 0.85rem + 2vw, 1.3rem) !important;
     padding: 0.8rem 1.6rem !important;
+  }
+}
+
+/* Desktop countdown alignment */
+@media (min-width: 768px) {
+  #sg-preseason-camp .countdown-label {
+    text-align: left;
+  }
+  
+  #sg-preseason-camp .countdown-timer {
+    justify-content: flex-start;
   }
 }
 
@@ -1515,7 +1562,15 @@
                     </div>
                     <a href="https://forms.sportigio.com/preseason-camp" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</a>
                     <p class="countdown-label"> Do startu pozostało:</p>
-                    <div id="countdown" class="countdown-timer">-- dni -- godzin -- minut</div>
+                    <div id="countdown" class="countdown-timer">
+                        <div class="time-box"><span id="days" class="number">--</span><span class="label">DNI</span></div>
+                        <div class="colon">:</div>
+                        <div class="time-box"><span id="hours" class="number">--</span><span class="label">GODZ</span></div>
+                        <div class="colon">:</div>
+                        <div class="time-box"><span id="minutes" class="number">--</span><span class="label">MIN</span></div>
+                        <div class="colon">:</div>
+                        <div class="time-box"><span id="seconds" class="number">--</span><span class="label">SEK</span></div>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/hNbiLYcCqK2XS5DONBeIFUlGIBDK0y1UWuvIg64f.png" alt="Zrzut ekranu platformy Sportigio z kreatorem strony klubu">
@@ -1835,7 +1890,13 @@
 
             // ===== Countdown timer to 30 June 2025 17:00 =====
             const countdownEl = document.getElementById('countdown');
-            const targetDate = new Date(2025, 5, 30, 17, 0, 0); // months 0-indexed
+            const daysEl    = document.getElementById('days');
+            const hoursEl   = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            // Data docelowa – 30 czerwca 2025, godz. 17:00 (miesiące 0-indexed)
+            const targetDate = new Date(2025, 5, 30, 17, 0, 0);
 
             // Zwraca właściwą odmianę rzeczownika w zależności od liczby
             function pluralizePL(n, one, few, many) {
@@ -1851,22 +1912,25 @@
                 const now = new Date();
                 const diff = targetDate - now;
 
-                // Jeśli czas minął – pokaż zera i zatrzymaj licznik
+                // Jeśli czas minął – ustaw wszystkie na zero i zatrzymaj licznik
                 if (diff <= 0) {
-                    countdownEl.textContent = '0 dni 00 godzin 00 minut';
+                    daysEl.textContent    = '0';
+                    hoursEl.textContent   = '00';
+                    minutesEl.textContent = '00';
+                    secondsEl.textContent = '00';
                     clearInterval(timerId);
                     return;
                 }
 
                 const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                const seconds = Math.floor(diff / 1000) % 60;
                 const hours   = Math.floor(diff / (1000 * 60 * 60)) % 24;
                 const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-                const dayWord    = pluralizePL(days,    'dzień',   'dni',    'dni');
-                const hourWord   = pluralizePL(hours,   'godzina', 'godziny','godzin');
-                const minuteWord = pluralizePL(minutes, 'minuta',  'minuty', 'minut');
-
-                countdownEl.textContent = `${days} ${dayWord} ${String(hours).padStart(2, '0')} ${hourWord} ${String(minutes).padStart(2, '0')} ${minuteWord}`;
+                daysEl.textContent    = days;
+                hoursEl.textContent   = String(hours).padStart(2, '0');
+                minutesEl.textContent = String(minutes).padStart(2, '0');
+                secondsEl.textContent = String(seconds).padStart(2, '0');
             }
 
             updateCountdown();
