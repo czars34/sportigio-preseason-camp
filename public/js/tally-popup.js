@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
       layout: 'modal',
       overlay: true,
       width: window.innerWidth < 768 ? 340 : undefined,
-      emoji: { text: '👋', animation: 'wave' }
+      hideTitle: true
     });
   };
 
