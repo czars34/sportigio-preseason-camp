@@ -1,33 +1,23 @@
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', () => {
+  // Ensure Tally script is available
   if (typeof Tally === 'undefined') return;
 
-  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+  // Selectors for all CTA elements that should trigger the popup
+  const selectors = ['.cta-button', '.navbar-cta', '.webinar-cta'];
 
-  if (isDesktop) {
-    // Desktop – auto-open popup
-    Tally.openPopup('wgxR6d', {
-      layout: 'default',
-      overlay: false,
-      emoji: { text: '👋', animation: 'wave' }
-    });
-  } else {
-    // Mobile – show floating action button to open popup on demand
-    const fab = document.getElementById('tallyFab');
-    if (fab) {
-      fab.addEventListener('click', () => {
-        // Hide FAB instantly
-        fab.style.display = 'none';
+  selectors.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((cta) => {
+      cta.addEventListener('click', (e) => {
+        // Prevent normal navigation to the form URL
+        e.preventDefault();
+
         Tally.openPopup('wgxR6d', {
           layout: 'default',
           overlay: false,
-          width: 340,
-          emoji: { text: '👋', animation: 'wave' },
-          onClose: () => {
-            // Show FAB again when popup closes
-            fab.style.display = 'flex';
-          }
+          width: window.innerWidth < 768 ? 340 : undefined,
+          emoji: { text: '👋', animation: 'wave' }
         });
       });
-    }
-  }
+    });
+  });
 }); 
