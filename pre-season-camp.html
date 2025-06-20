@@ -1453,6 +1453,29 @@
 }
 
     
+  /* ===== mobile Tally FAB ===== */
+  #sg-preseason-camp .tally-fab {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #01DFEC;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1200;
+  }
+
+  @media (min-width: 768px) {
+    #sg-preseason-camp .tally-fab { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -1466,13 +1489,13 @@
                     <img class="logo-sygnet" src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/imK5hG4oPpwCa314TFOm9fYccTQ34H6tDvAM3fgQ.png" alt="Sportigio sygnet" loading="lazy">
                 </a>
             </div>
-            <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="navbar-cta mobile-only">Zapisz się</button>
+            <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta mobile-only">Zapisz się</a>
             <ul class="navbar-nav">
                 <li><a href="#terminy">Terminy</a></li>
                 <li><a href="#zyskujesz">Co zyskujesz?</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="navbar-cta desktop-only">Zapisz się</button>
+            <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta desktop-only">Zapisz się</a>
             <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
         </nav>
 
@@ -1490,7 +1513,7 @@
                         <div class="hero-detail-item"><i class="fas fa-hourglass-half"></i> Dostęp: 30.06 - 03.08.2025 (4 tygodnie tematyczne)</div>
                         <div class="hero-detail-item"><i class="fas fa-user"></i> Gotowe instrukcje i materiały do samodzielnego wdrożenia</div>
                     </div>
-                    <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</button>
+                    <a href="https://forms.sportigio.com/preseason-camp" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</a>
                     <p class="countdown-label"> Do startu pozostało:</p>
                     <div id="countdown" class="countdown-timer">-- dni -- godzin -- minut</div>
                 </div>
@@ -1553,7 +1576,7 @@
                             </ul>
                         </div>
                         <div class="webinar-cta-row">
-                            <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</button>
+                            <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
                         </div>
                     </div><!-- /.webinar-info -->
                 </div><!-- /.webinar-layout -->
@@ -1746,7 +1769,7 @@
             <div class="container">
                 <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp 2025</h2>
                 <p>Zacznij sezon z gotową stroną, sklepem<br class="mobile-only"> i aplikacją dla kibiców – <strong>całkowicie za darmo</strong>.</p>
-                <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="cta-button">Zapisz się teraz</button>
+                <a href="https://forms.sportigio.com/preseason-camp" class="cta-button">Zapisz się teraz</a>
                 <p class="cta-note">Bez umów, bez zobowiązań. Z pełnym wsparciem.</p>
             </div>
         </section>
@@ -1851,15 +1874,43 @@
         <!-- Auto-open Tally popup on page load -->
         <script>
           window.addEventListener('load', function () {
-            if (typeof Tally !== 'undefined') {
+            if (typeof Tally === 'undefined') return;
+
+            const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
+            if (isDesktop) {
+              // Desktop – auto-open popup
               Tally.openPopup('wgxR6d', {
-                layout: 'default', // bottom-right without dimming
+                layout: 'default',
                 overlay: false,
                 emoji: { text: '👋', animation: 'wave' }
               });
+            } else {
+              // Mobile – show floating action button to open popup on demand
+              const fab = document.getElementById('tallyFab');
+              if (fab) {
+                fab.addEventListener('click', () => {
+                  // Hide FAB instantly
+                  fab.style.display = 'none';
+                  Tally.openPopup('wgxR6d', {
+                    layout: 'default',
+                    overlay: false,
+                    width: 340,
+                    emoji: { text: '👋', animation: 'wave' },
+                    onClose: () => {
+                      // Show FAB again when popup closes
+                      fab.style.display = 'flex';
+                    }
+                  });
+                });
+              }
             }
           });
         </script>
+        <!-- Mobile floating button to open Tally popup -->
+        <button id="tallyFab" class="tally-fab" aria-label="Zapisz się">
+            <i class="fas fa-hand-paper"></i>
+        </button>
     </div>
 </body>
 </html>
