@@ -6,6 +6,7 @@
     <title>Sportigio PreSeason Camp</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://tally.so/widgets/embed.js"></script>
     <style>
 
         #sg-preseason-camp * {
@@ -1465,13 +1466,13 @@
                     <img class="logo-sygnet" src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/imK5hG4oPpwCa314TFOm9fYccTQ34H6tDvAM3fgQ.png" alt="Sportigio sygnet" loading="lazy">
                 </a>
             </div>
-            <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta mobile-only">Zapisz się</a>
+            <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="navbar-cta mobile-only">Zapisz się</button>
             <ul class="navbar-nav">
                 <li><a href="#terminy">Terminy</a></li>
                 <li><a href="#zyskujesz">Co zyskujesz?</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="https://forms.sportigio.com/preseason-camp" class="navbar-cta desktop-only">Zapisz się</a>
+            <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="navbar-cta desktop-only">Zapisz się</button>
             <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
         </nav>
 
@@ -1489,7 +1490,7 @@
                         <div class="hero-detail-item"><i class="fas fa-hourglass-half"></i> Dostęp: 30.06 - 03.08.2025 (4 tygodnie tematyczne)</div>
                         <div class="hero-detail-item"><i class="fas fa-user"></i> Gotowe instrukcje i materiały do samodzielnego wdrożenia</div>
                     </div>
-                    <a href="https://forms.sportigio.com/preseason-camp" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</a>
+                    <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="cta-button cta-green">ZAPISZ SIĘ ZA DARMO</button>
                     <p class="countdown-label"> Do startu pozostało:</p>
                     <div id="countdown" class="countdown-timer">-- dni -- godzin -- minut</div>
                 </div>
@@ -1552,7 +1553,7 @@
                             </ul>
                         </div>
                         <div class="webinar-cta-row">
-                            <a href="https://forms.sportigio.com/preseason-camp" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</a>
+                            <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="webinar-cta"><i class="fas fa-paper-plane"></i> Zapisz się i odbierz przewodnik PDF +<br class="desktop-only"> dostęp do panelu</button>
                         </div>
                     </div><!-- /.webinar-info -->
                 </div><!-- /.webinar-layout -->
@@ -1745,7 +1746,7 @@
             <div class="container">
                 <h2>Dołącz do <a href="https://lp.sportigio.com" target="_blank" rel="noopener"><img src="https://dfdu1vke3eg77.cloudfront.net/spaces/95/uploads/splC7f2PSXk8pX6KRGDp7UQJYB7oQwViQB6kqPzE.png" alt="Sportigio" style="height: 1em; vertical-align: -0.2em; margin: 0 0.2em;" loading="lazy"></a> Preseason Camp 2025</h2>
                 <p>Zacznij sezon z gotową stroną, sklepem<br class="mobile-only"> i aplikacją dla kibiców – <strong>całkowicie za darmo</strong>.</p>
-                <a href="https://forms.sportigio.com/preseason-camp" class="cta-button">Zapisz się teraz</a>
+                <button data-tally-open="wgxR6d" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="cta-button">Zapisz się teraz</button>
                 <p class="cta-note">Bez umów, bez zobowiązań. Z pełnym wsparciem.</p>
             </div>
         </section>
@@ -1846,6 +1847,18 @@
 
             updateCountdown();
             const timerId = setInterval(updateCountdown, 1000);
+        </script>
+        <!-- Auto-open Tally popup on page load -->
+        <script>
+          window.addEventListener('load', function () {
+            if (typeof Tally !== 'undefined') {
+              Tally.openPopup('wgxR6d', {
+                layout: 'default', // bottom-right without dimming
+                overlay: false,
+                emoji: { text: '👋', animation: 'wave' }
+              });
+            }
+          });
         </script>
     </div>
 </body>
