@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://preseasoncamp.com/sitemap.xml
